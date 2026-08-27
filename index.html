@@ -696,32 +696,37 @@
             </a>
           </div>
 
-          <!-- Location Map Visual -->
+          <!-- Location Map Visual with Google Maps Embed -->
           <div class="location-feature-deck reveal-item">
-            <div class="carto-canvas-box">
-              <div class="c-road c-main"><span data-i18n="fin.map_highway">Carretera Internacional (175m)</span></div>
-              <div class="c-road c-access"><span data-i18n="fin.map_access">Acceso Los Mangos</span></div>
-
-              <div class="c-point pt-m">
-                <div class="c-pulse"></div>
-                <div class="c-badge"><i data-lucide="map-pin" class="gold-accent"></i> Residencial Los Mangos</div>
-              </div>
-
-              <div class="c-point pt-p">
-                <div class="c-badge-sec"><i data-lucide="landmark" class="green-accent"></i> <span data-i18n="fin.map_park">Parque Central (4 Cuadras)</span></div>
-              </div>
+            <div class="gmaps-embed-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3844.75549725838!2d-89.1576401!3d14.8395561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f62589578647ba3%3A0xb366b59527fefae6!2sResidencial%20Los%20Mangos!5e0!3m2!1ses!2shn!4v1710000000000!5m2!1ses!2shn"
+                width="100%"
+                height="100%"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Google Maps Residencial Los Mangos">
+              </iframe>
             </div>
 
             <div class="carto-stats-row">
               <div class="c-stat-pill">
-                <i data-lucide="check" class="gold-accent"></i>
+                <i data-lucide="map-pin" class="gold-accent"></i>
                 <span data-i18n="fin.leg_highway">A 175m de Carretera Internacional</span>
               </div>
               <div class="c-stat-pill">
-                <i data-lucide="check" class="green-accent"></i>
+                <i data-lucide="landmark" class="green-accent"></i>
                 <span data-i18n="fin.leg_park">A 4 cuadras del Parque Central</span>
               </div>
             </div>
+
+            <a href="https://maps.app.goo.gl/bRTs5AX7yKkufkWN8" target="_blank" rel="noopener noreferrer" class="btn-open-gmaps">
+              <i data-lucide="map"></i>
+              <span data-i18n="fin.btn_gmaps">Abrir en Google Maps</span>
+              <i data-lucide="external-link"></i>
+            </a>
           </div>
 
         </div>
