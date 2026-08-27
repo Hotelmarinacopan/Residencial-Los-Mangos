@@ -987,6 +987,37 @@
   }
 
   /* =========================================================
+     4.5 MOBILE HAMBURGER MENU DRAWER INTERACTION
+     ========================================================= */
+  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+  const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
+  const hamburgerIconOpen = document.getElementById('hamburger-icon-open');
+  const hamburgerIconClose = document.getElementById('hamburger-icon-close');
+  const mobileNavItems = document.querySelectorAll('.mobile-nav-item, .mobile-drawer-footer a');
+
+  if (mobileMenuToggle && mobileMenuDrawer) {
+    mobileMenuToggle.addEventListener('click', () => {
+      const isOpen = mobileMenuDrawer.classList.toggle('is-open');
+      if (hamburgerIconOpen && hamburgerIconClose) {
+        hamburgerIconOpen.classList.toggle('is-hidden', isOpen);
+        hamburgerIconClose.classList.toggle('is-hidden', !isOpen);
+      }
+    });
+  }
+
+  mobileNavItems.forEach((item) => {
+    item.addEventListener('click', () => {
+      if (mobileMenuDrawer) {
+        mobileMenuDrawer.classList.remove('is-open');
+        if (hamburgerIconOpen && hamburgerIconClose) {
+          hamburgerIconOpen.classList.remove('is-hidden');
+          hamburgerIconClose.classList.add('is-hidden');
+        }
+      }
+    });
+  });
+
+  /* =========================================================
      5. INITIALIZATION
      ========================================================= */
   function init() {

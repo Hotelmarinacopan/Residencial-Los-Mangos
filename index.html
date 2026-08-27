@@ -84,8 +84,34 @@
           <span class="lang-label" id="lang-current-label">ES</span>
         </button>
 
-        <a href="https://wa.me/50493613976" target="_blank" rel="noopener noreferrer" class="btn-nav-gold">
+        <a href="https://wa.me/50493613976" target="_blank" rel="noopener noreferrer" class="btn-nav-gold nav-cta-desktop">
           <span class="dot-live"></span>
+          <span data-i18n="nav.cta">Reservar Lote</span>
+        </a>
+
+        <!-- Mobile Hamburger Toggle Button -->
+        <button id="mobile-menu-toggle" class="mobile-hamburger-btn" aria-label="Abrir Menú">
+          <i data-lucide="menu" id="hamburger-icon-open"></i>
+          <i data-lucide="x" id="hamburger-icon-close" class="is-hidden"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Fullscreen Dropdown Menu Drawer -->
+    <div id="mobile-menu-drawer" class="mobile-drawer-overlay">
+      <nav class="mobile-nav-links">
+        <a href="#hero" class="mobile-nav-item"><span class="m-idx">01</span> <span data-i18n="nav.home">Inicio</span></a>
+        <a href="#concepto" class="mobile-nav-item"><span class="m-idx">02</span> <span data-i18n="nav.concept">Concepto</span></a>
+        <a href="#solidez" class="mobile-nav-item"><span class="m-idx">03</span> <span data-i18n="nav.trust">Solidez</span></a>
+        <a href="#masterplan" class="mobile-nav-item"><span class="m-idx">04</span> <span data-i18n="nav.masterplan">Masterplan</span></a>
+        <a href="#inversion" class="mobile-nav-item"><span class="m-idx">05</span> <span data-i18n="nav.investment">Inversión</span></a>
+        <a href="#financiamiento" class="mobile-nav-item"><span class="m-idx">06</span> <span data-i18n="nav.financing">Financiamiento</span></a>
+        <a href="#contacto" class="mobile-nav-item"><span class="m-idx">07</span> <span data-i18n="nav.contact">Contacto</span></a>
+      </nav>
+
+      <div class="mobile-drawer-footer">
+        <a href="https://wa.me/50493613976" target="_blank" rel="noopener noreferrer" class="btn-gold-action full-width">
+          <i data-lucide="message-circle"></i>
           <span data-i18n="nav.cta">Reservar Lote</span>
         </a>
       </div>

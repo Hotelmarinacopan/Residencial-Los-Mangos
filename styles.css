@@ -393,6 +393,102 @@ body {
   box-shadow: 0 0 25px var(--color-gold-glow);
 }
 
+/* Mobile Hamburger Button */
+.mobile-hamburger-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.mobile-hamburger-btn:hover, .mobile-hamburger-btn:active {
+  background: var(--color-gold-dim);
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.mobile-hamburger-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+/* Mobile Drawer Overlay */
+.mobile-drawer-overlay {
+  display: none;
+  position: fixed;
+  top: 56px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: calc(100dvh - 56px);
+  background: rgba(7, 9, 8, 0.98);
+  backdrop-filter: blur(25px);
+  z-index: 9999;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.2rem 1.4rem 2rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-drawer-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.mobile-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-main);
+  text-decoration: none;
+  padding: 0.7rem 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  transition: var(--transition-smooth);
+}
+
+.mobile-nav-item:hover, .mobile-nav-item.active {
+  border-color: var(--color-gold);
+  background: var(--color-gold-dim);
+  color: var(--color-gold);
+  transform: translateX(4px);
+}
+
+.mobile-nav-item .m-idx {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-gold);
+  font-weight: 700;
+}
+
+.mobile-drawer-footer {
+  margin-top: 1rem;
+}
+
 /* =========================================================
    STRICT 100VH SECTION ARCHITECTURE
    ========================================================= */
@@ -2041,72 +2137,30 @@ body {
 }
 
 /* =========================================================
-   COMPREHENSIVE MOBILE & TABLET ARCHITECTURAL STYLING
+   STRICT 100DVH MOBILE & TABLET RESPONSIVE SYSTEM
+   Strictly 1 screen (100dvh) per section, Zero Overflow,
+   Ultra-Refined Mobile Navbar with Glass Menu Drawer
    ========================================================= */
 
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
+  /* Mobile Navigation Bar */
   .luxury-nav-header {
-    padding: 0.9rem 1.8rem;
+    padding: 0.6rem 1rem;
+    background: rgba(7, 9, 8, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-subtle);
   }
-  
-  .brand-isotype-img {
-    height: 38px;
-  }
-  
+
   .nav-links-center {
     display: none;
   }
 
-  .vh-section {
-    height: auto;
-    min-height: 100vh;
-    max-height: none;
-    padding: 5.5rem 1.8rem 3rem;
+  .nav-cta-desktop {
+    display: none !important;
   }
 
-  .editorial-split-layout {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .pillars-horizontal-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.2rem;
-  }
-
-  .masterplan-command-grid {
-    grid-template-columns: 1fr;
-    gap: 1.6rem;
-  }
-
-  .investment-deck-grid {
-    grid-template-columns: 1fr;
-    gap: 1.6rem;
-  }
-
-  .banking-location-grid {
-    grid-template-columns: 1fr;
-    gap: 1.6rem;
-  }
-
-  .vip-concierge-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .hero-headline {
-    font-size: 3.8rem;
-  }
-}
-
-@media (max-width: 768px) {
-  /* Navigation */
-  .luxury-nav-header {
-    padding: 0.75rem 1rem;
-  }
-
-  .luxury-nav-header.is-scrolled {
-    padding: 0.6rem 1rem;
+  .mobile-hamburger-btn {
+    display: flex;
   }
 
   .brand-isotype-img {
@@ -2114,78 +2168,125 @@ body {
   }
 
   .brand-name-text {
-    font-size: 0.98rem;
+    font-size: 0.92rem;
+    letter-spacing: 0.04em;
   }
 
-  .nav-action-right {
-    gap: 0.5rem;
+  .mobile-drawer-overlay {
+    display: flex;
   }
 
-  .lang-switch-pill {
-    padding: 0.45rem 0.75rem;
-    font-size: 0.75rem;
-    gap: 0.35rem;
-  }
-
-  .btn-nav-gold {
-    padding: 0.45rem 0.95rem;
-    font-size: 0.78rem;
-  }
-
-  /* Section containers */
+  /* Strict 100dvh Sections */
   .vh-section {
-    padding: 4.5rem 1.1rem 2.5rem;
+    width: 100vw;
+    height: 100dvh;
+    min-height: 100dvh;
+    max-height: 100dvh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3.8rem 0.85rem 0.75rem;
+    box-sizing: border-box;
+    position: relative;
   }
 
   .section-inner-flow {
-    gap: 1.3rem;
+    width: 100%;
+    max-width: 540px;
+    gap: 0.65rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .section-header-compact {
+    gap: 0.2rem;
+    max-width: 100%;
+  }
+
+  .badge-number-pill {
+    padding: 0.18rem 0.65rem;
+    margin-bottom: 0;
+  }
+
+  .b-num {
+    font-size: 0.68rem;
+  }
+
+  .b-text {
+    font-size: 0.65rem;
   }
 
   .section-title-compact {
-    font-size: 2rem;
-    line-height: 1.2;
+    font-size: 1.35rem;
+    line-height: 1.15;
   }
 
   .section-subtitle-compact {
-    font-size: 0.92rem;
-    line-height: 1.5;
+    font-size: 0.78rem;
+    line-height: 1.35;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
-  /* Hero Section */
+  /* SECTION 1: HERO (STRICT 100DVH MOBILE) */
+  .hero-content-flow {
+    margin-top: 0;
+    gap: 0.5rem;
+  }
+
+  .hero-tag-badge {
+    padding: 0.22rem 0.75rem;
+    font-size: 0.68rem;
+    margin-bottom: 0.4rem;
+  }
+
   .hero-headline {
-    font-size: 2.7rem;
-    line-height: 1.18;
-    margin-bottom: 0.9rem;
+    font-size: 1.85rem;
+    line-height: 1.14;
+    margin-bottom: 0.45rem;
   }
 
   .hero-description {
-    font-size: 1.05rem;
-    line-height: 1.55;
-    margin-bottom: 1.4rem;
-    padding: 0 0.4rem;
+    font-size: 0.82rem;
+    line-height: 1.4;
+    margin: 0 auto 0.7rem;
+    max-width: 95%;
   }
 
   .hero-btn-row {
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
     width: 100%;
-    gap: 0.75rem;
-    margin-bottom: 1.4rem;
+    gap: 0.5rem;
+    margin-bottom: 0.65rem;
   }
 
   .btn-gold-action, .btn-outline-action {
-    width: 100%;
-    padding: 0.95rem 1.2rem;
-    font-size: 0.95rem;
+    flex: 1;
+    padding: 0.65rem 0.6rem;
+    font-size: 0.8rem;
+    border-radius: 10px;
+    gap: 0.35rem;
   }
 
-  /* 2x2 Clean Grid for Trust Bar on Mobile */
+  .btn-gold-action svg, .btn-outline-action svg {
+    width: 14px;
+    height: 14px;
+  }
+
   .hero-trust-bar {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.9rem 0.8rem;
-    padding: 1.1rem 1.2rem;
-    border-radius: 18px;
-    width: 100%;
+    gap: 0.45rem 0.6rem;
+    padding: 0.65rem 0.8rem;
+    border-radius: 14px;
+    max-width: 100%;
+    margin-bottom: 0;
   }
 
   .trust-divider {
@@ -2193,428 +2294,570 @@ body {
   }
 
   .trust-pill-item {
-    gap: 0.55rem;
+    gap: 0.45rem;
   }
 
   .trust-icon {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
   }
 
   .trust-big {
-    font-size: 0.95rem;
-  }
-
-  .trust-title {
     font-size: 0.82rem;
   }
 
-  .trust-sub {
+  .trust-title {
     font-size: 0.72rem;
   }
 
-  /* Concept Section */
+  .trust-sub {
+    font-size: 0.62rem;
+  }
+
+  .star-gold {
+    width: 10px;
+    height: 10px;
+  }
+
+  .hero-mouse-scroll {
+    display: none;
+  }
+
+  /* SECTION 2: CONCEPTO (STRICT 100DVH MOBILE) */
+  .editorial-split-layout {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+    width: 100%;
+  }
+
+  .editorial-left-statement {
+    gap: 0.4rem;
+  }
+
   .editorial-main-title {
-    font-size: 2.2rem;
+    font-size: 1.4rem;
+    line-height: 1.15;
   }
 
   .editorial-main-p {
-    font-size: 1rem;
+    font-size: 0.78rem;
+    line-height: 1.35;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .editorial-stat-box {
     grid-template-columns: 1fr 1fr;
-    gap: 0.8rem;
-    padding: 1rem 1.1rem;
+    gap: 0.5rem;
+    padding: 0.6rem 0.75rem;
+    border-radius: 12px;
+    margin-top: 0.2rem;
   }
 
   .stat-num {
-    font-size: 1.75rem;
+    font-size: 1.35rem;
   }
 
   .stat-desc {
-    font-size: 0.78rem;
+    font-size: 0.7rem;
+    line-height: 1.25;
+  }
+
+  .editorial-right-stack {
+    gap: 0.4rem;
   }
 
   .editorial-feature-row {
-    padding: 0.85rem 1.1rem;
-    gap: 1rem;
-  }
-
-  .feat-num {
-    font-size: 1.2rem;
-  }
-
-  .feat-title {
-    font-size: 1.05rem;
-  }
-
-  .feat-desc {
-    font-size: 0.85rem;
-  }
-
-  /* Solidez Section */
-  .pillars-horizontal-grid {
-    grid-template-columns: 1fr;
-    gap: 0.9rem;
-  }
-
-  .stat-pillar-card {
-    padding: 1.5rem 1.3rem;
-    border-radius: 16px;
-  }
-
-  .pillar-giant-label {
-    font-size: 2.1rem;
-  }
-
-  .pillar-heading {
-    font-size: 1.15rem;
-  }
-
-  .pillar-desc {
-    font-size: 0.88rem;
-  }
-
-  /* Masterplan Section */
-  .aerial-screen {
-    height: 230px;
-    border-radius: 14px;
-  }
-
-  .pin-disc {
-    width: 28px;
-    height: 28px;
-    font-size: 0.85rem;
-  }
-
-  .map-status-floating {
-    bottom: 0.5rem;
-    left: 0.5rem;
-    padding: 0.3rem 0.75rem;
-    font-size: 0.72rem;
-  }
-
-  .mp-selector-row {
-    gap: 0.5rem;
-  }
-
-  .mp-block-btn {
-    padding: 0.7rem 0.55rem;
+    padding: 0.55rem 0.8rem;
+    gap: 0.75rem;
     border-radius: 12px;
   }
 
+  .feat-num {
+    font-size: 1rem;
+  }
+
+  .feat-title {
+    font-size: 0.88rem;
+  }
+
+  .feat-desc {
+    font-size: 0.72rem;
+    line-height: 1.3;
+  }
+
+  /* Hide 4th and 5th items on very compact mobile so it fits 100% in 1 screen */
+  .editorial-right-stack .editorial-feature-row:nth-child(n+4) {
+    display: none;
+  }
+
+  /* SECTION 3: SOLIDEZ (STRICT 100DVH MOBILE) */
+  .pillars-horizontal-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .stat-pillar-card {
+    padding: 0.75rem 0.8rem;
+    border-radius: 14px;
+    gap: 0.4rem;
+  }
+
+  .pillar-giant-label {
+    font-size: 1.4rem;
+  }
+
+  .pillar-line {
+    width: 25px;
+    height: 2px;
+  }
+
+  .pillar-line.gold, .pillar-line.green {
+    width: 35px;
+  }
+
+  .pillar-heading {
+    font-size: 0.88rem;
+  }
+
+  .pillar-desc {
+    font-size: 0.72rem;
+    line-height: 1.3;
+  }
+
+  /* SECTION 4: MASTERPLAN (STRICT 100DVH MOBILE) */
+  .masterplan-command-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .aerial-screen {
+    height: 145px;
+    border-radius: 12px;
+  }
+
+  .pin-disc {
+    width: 22px;
+    height: 22px;
+    font-size: 0.72rem;
+  }
+
+  .map-status-floating {
+    bottom: 0.35rem;
+    left: 0.35rem;
+    padding: 0.2rem 0.55rem;
+    font-size: 0.65rem;
+  }
+
+  .mp-selector-row {
+    gap: 0.4rem;
+  }
+
+  .mp-block-btn {
+    padding: 0.45rem 0.4rem;
+    border-radius: 10px;
+  }
+
   .mp-block-btn strong {
-    font-size: 0.82rem;
+    font-size: 0.75rem;
   }
 
   .mp-block-btn span {
-    font-size: 0.68rem;
+    font-size: 0.62rem;
+  }
+
+  .btn-compare-blocks {
+    padding: 0.45rem;
+    font-size: 0.75rem;
+    border-radius: 10px;
   }
 
   .masterplan-specs-deck {
-    padding: 1.4rem 1.2rem;
-    border-radius: 18px;
+    padding: 0.75rem 0.85rem;
+    border-radius: 14px;
+  }
+
+  .specs-top-tags {
+    margin-bottom: 0.3rem;
+  }
+
+  .badge-solid-gold, .badge-solid-green {
+    padding: 0.15rem 0.55rem;
+    font-size: 0.68rem;
   }
 
   .specs-main-heading {
-    font-size: 1.25rem;
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
   }
 
   .specs-main-paragraph {
-    font-size: 0.88rem;
+    font-size: 0.72rem;
+    line-height: 1.3;
+    margin-bottom: 0.45rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .specs-key-matrix {
     grid-template-columns: 1fr 1fr;
-    gap: 0.55rem;
-    padding: 0.8rem 0.95rem;
+    gap: 0.35rem;
+    padding: 0.5rem 0.65rem;
+    border-radius: 10px;
+    margin-bottom: 0.45rem;
   }
 
   .matrix-k {
-    font-size: 0.68rem;
+    font-size: 0.6rem;
   }
 
   .matrix-v {
-    font-size: 0.88rem;
+    font-size: 0.78rem;
   }
 
-  .check-item {
-    font-size: 0.85rem;
+  .specs-feature-checklist {
+    display: none;
   }
 
-  /* Inversión & Simulador */
+  /* SECTION 5: INVERSIÓN (STRICT 100DVH MOBILE) */
+  .investment-deck-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
   .pricing-feature-column {
-    padding: 1.5rem 1.3rem;
-    border-radius: 18px;
-    gap: 1rem;
-  }
-
-  .price-mega-display .cur {
-    font-size: 1.6rem;
-  }
-
-  .price-mega-display .amt {
-    font-size: 3.2rem;
-  }
-
-  .price-mega-display .unit {
-    font-size: 1rem;
-  }
-
-  .pricing-bullet-stack {
-    gap: 0.65rem;
-  }
-
-  .p-bullet-item {
-    font-size: 0.88rem;
+    display: none; /* In 100dvh mobile, the right simulator contains the full quote & ROI */
   }
 
   .calculator-interactive-deck {
-    padding: 1.5rem 1.3rem;
-    border-radius: 18px;
-    gap: 0.9rem;
+    padding: 0.85rem 0.95rem;
+    border-radius: 14px;
+    gap: 0.45rem;
+    width: 100%;
   }
 
   .calc-header-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.65rem;
+    margin-bottom: 0.2rem;
   }
 
   .calc-title {
-    font-size: 1.15rem;
+    font-size: 0.95rem;
+    gap: 0.35rem;
+  }
+
+  .calc-title svg {
+    width: 16px;
+    height: 16px;
   }
 
   .unit-switch-pills {
-    width: 100%;
-    justify-content: space-between;
-    padding: 0.15rem;
+    padding: 0.12rem;
   }
 
   .unit-pill-btn {
-    flex: 1;
-    text-align: center;
-    padding: 0.35rem 0.5rem;
-    font-size: 0.75rem;
-  }
-
-  .custom-range-slider {
-    height: 8px;
-  }
-
-  .custom-range-slider::-webkit-slider-thumb {
-    width: 24px;
-    height: 24px;
-  }
-
-  .calc-results-deck {
-    grid-template-columns: 1fr;
-    gap: 0.6rem;
-    padding: 0.9rem 1.1rem;
-  }
-
-  .res-label {
+    padding: 0.2rem 0.5rem;
     font-size: 0.68rem;
   }
 
-  .res-num-huge {
-    font-size: 1.45rem;
+  .calc-control-group {
+    margin-bottom: 0.35rem;
   }
 
-  .res-num {
+  .calc-slider-header {
+    font-size: 0.75rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .slider-big-readout {
+    font-size: 0.85rem;
+  }
+
+  .custom-range-slider {
+    height: 5px;
+  }
+
+  .custom-range-slider::-webkit-slider-thumb {
+    width: 18px;
+    height: 18px;
+  }
+
+  .calc-results-deck {
+    grid-template-columns: 1fr 1fr 1.2fr;
+    gap: 0.4rem;
+    padding: 0.55rem 0.7rem;
+    border-radius: 10px;
+    margin-bottom: 0.35rem;
+  }
+
+  .res-label {
+    font-size: 0.58rem;
+  }
+
+  .res-num-huge {
     font-size: 1rem;
   }
 
+  .res-num {
+    font-size: 0.82rem;
+  }
+
   .roi-projection-box {
-    padding: 0.9rem 1.1rem;
-    border-radius: 12px;
+    padding: 0.55rem 0.7rem;
+    border-radius: 10px;
+    gap: 0.3rem;
+    margin-bottom: 0.4rem;
   }
 
-  .roi-header {
-    flex-wrap: wrap;
-    gap: 0.4rem;
+  .roi-title {
+    font-size: 0.72rem;
   }
 
-  .roi-future-num, .roi-gain-num {
-    font-size: 1.05rem;
-  }
-
-  .btn-whatsapp-quote {
-    padding: 0.85rem 1.1rem;
-    font-size: 0.88rem;
-    text-align: center;
-  }
-
-  /* Financiamiento & Ubicación */
-  .bank-feature-deck {
-    padding: 1.5rem 1.3rem;
-    border-radius: 18px;
-  }
-
-  .bank-icon-box {
-    width: 42px;
-    height: 42px;
-  }
-
-  .bank-deck-name {
-    font-size: 1.2rem;
-  }
-
-  .bank-detail-row {
-    font-size: 0.88rem;
-  }
-
-  .location-feature-deck {
-    padding: 1.3rem 1.1rem;
-    border-radius: 18px;
-  }
-
-  .carto-canvas-box {
-    height: 185px;
-  }
-
-  .c-road {
+  .roi-btn {
+    padding: 0.12rem 0.4rem;
     font-size: 0.65rem;
   }
 
-  .carto-stats-row {
-    flex-direction: column;
-    gap: 0.55rem;
+  .roi-sublabel {
+    font-size: 0.6rem;
   }
 
-  .c-stat-pill {
-    padding: 0.65rem 0.85rem;
-    font-size: 0.82rem;
+  .roi-future-num, .roi-gain-num {
+    font-size: 0.85rem;
   }
 
-  /* VIP Contact & Form */
-  .vip-heading-title {
-    font-size: 2.1rem;
+  .roi-bar-track {
+    height: 4px;
   }
 
-  .vip-lead-desc {
+  .btn-whatsapp-quote {
+    padding: 0.55rem 0.8rem;
+    font-size: 0.78rem;
+    margin-bottom: 0.35rem;
+    border-radius: 10px;
+    gap: 0.4rem;
+  }
+
+  .btn-whatsapp-quote svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  /* SECTION 6: FINANCIAMIENTO & UBICACIÓN (STRICT 100DVH MOBILE) */
+  .banking-location-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .bank-feature-deck {
+    padding: 0.75rem 0.85rem;
+    border-radius: 14px;
+    gap: 0.35rem;
+  }
+
+  .bank-deck-header {
+    gap: 0.6rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .bank-icon-box {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+  }
+
+  .bank-icon-box svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .bank-deck-name {
     font-size: 0.95rem;
   }
 
-  .vip-contact-card {
-    padding: 0.95rem 1.1rem;
+  .bank-deck-sub {
+    font-size: 0.68rem;
+  }
+
+  .bank-details-list {
+    gap: 0.35rem;
+    margin-bottom: 0.45rem;
+  }
+
+  .bank-detail-row {
+    font-size: 0.75rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .location-feature-deck {
+    padding: 0.75rem 0.85rem;
     border-radius: 14px;
   }
 
-  .vip-icon {
-    width: 40px;
-    height: 40px;
-  }
-
-  .vip-card-val {
-    font-size: 0.98rem;
-  }
-
-  .vip-right-form-deck {
-    padding: 1.5rem 1.25rem;
-    border-radius: 18px;
-  }
-
-  .vip-form-title {
-    font-size: 1.25rem;
-  }
-
-  .form-grid-row {
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .form-input-field label {
-    font-size: 0.78rem;
-  }
-
-  /* Critical: 16px prevents iOS Safari auto-zoom */
-  .modern-input, .modern-select {
-    font-size: 16px !important;
-    padding: 0.75rem 0.9rem;
+  .carto-canvas-box {
+    height: 110px;
     border-radius: 10px;
+    margin-bottom: 0.4rem;
   }
 
-  .vip-submit-btn {
-    padding: 0.95rem;
-    font-size: 0.98rem;
+  .c-badge, .c-badge-sec {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.68rem;
   }
 
-  .vip-bottom-footer {
-    flex-direction: column;
-    gap: 0.85rem;
-    text-align: center;
-    font-size: 0.78rem;
+  .carto-stats-row {
+    display: flex;
+    flex-direction: row;
+    gap: 0.4rem;
   }
 
-  .vip-footer-pills {
-    flex-wrap: wrap;
-    justify-content: center;
+  .c-stat-pill {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.68rem;
+    border-radius: 8px;
+  }
+
+  /* SECTION 7: CONTACTO VIP (STRICT 100DVH MOBILE) */
+  .vip-concierge-grid {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+    width: 100%;
+  }
+
+  .vip-left-info {
     gap: 0.45rem;
   }
 
-  /* Modal Drawer on Mobile */
+  .vip-heading-title {
+    font-size: 1.45rem;
+    line-height: 1.15;
+  }
+
+  .vip-lead-desc {
+    font-size: 0.78rem;
+    line-height: 1.35;
+    margin-bottom: 0.2rem;
+  }
+
+  .vip-action-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  .vip-contact-card {
+    flex: 1;
+    padding: 0.6rem 0.75rem;
+    border-radius: 12px;
+    gap: 0.5rem;
+  }
+
+  .vip-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+  }
+
+  .vip-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .vip-card-tag {
+    font-size: 0.58rem;
+  }
+
+  .vip-card-val {
+    font-size: 0.8rem;
+  }
+
+  .vip-arrow {
+    display: none;
+  }
+
+  .vip-right-form-deck {
+    padding: 0.75rem 0.85rem;
+    border-radius: 14px;
+  }
+
+  .vip-form-title {
+    font-size: 0.95rem;
+    margin-bottom: 0.45rem;
+  }
+
+  .form-grid-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.45rem;
+    margin-bottom: 0.45rem;
+  }
+
+  .form-input-field label {
+    font-size: 0.65rem;
+  }
+
+  .modern-input, .modern-select {
+    font-size: 16px !important;
+    padding: 0.5rem 0.65rem;
+    border-radius: 8px;
+  }
+
+  .vip-submit-btn {
+    margin-top: 0.3rem;
+    padding: 0.65rem;
+    font-size: 0.82rem;
+  }
+
+  .vip-privacy-notice {
+    font-size: 0.62rem;
+    margin-top: 0.35rem;
+  }
+
+  .vip-bottom-footer {
+    display: none; /* Omit footer on mobile to keep 100dvh strict fit */
+  }
+
+  /* Compare Drawer Modal Mobile */
   .compare-drawer-panel {
-    width: 95%;
-    max-height: 92vh;
-    padding: 1.4rem 1.1rem;
-    border-radius: 18px;
+    width: 94%;
+    max-height: 85vh;
+    padding: 1.2rem 1rem;
+    border-radius: 16px;
   }
 
   .compare-drawer-title {
-    font-size: 1.3rem;
-  }
-
-  .compare-drawer-sub {
-    font-size: 0.82rem;
+    font-size: 1.2rem;
   }
 
   .compare-matrix-table th, .compare-matrix-table td {
-    padding: 0.75rem 0.65rem;
-    font-size: 0.82rem;
-  }
-
-  .btn-select-compare {
-    padding: 0.45rem 0.75rem;
+    padding: 0.6rem 0.5rem;
     font-size: 0.75rem;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 380px) {
   .hero-headline {
-    font-size: 2.15rem;
+    font-size: 1.65rem;
   }
-
-  .editorial-main-title {
-    font-size: 1.95rem;
-  }
-
   .section-title-compact {
-    font-size: 1.75rem;
+    font-size: 1.2rem;
   }
-
   .hero-trust-bar {
     grid-template-columns: 1fr;
-    gap: 0.75rem;
-    padding: 0.95rem 1rem;
+    gap: 0.35rem;
   }
-
-  .price-mega-display .amt {
-    font-size: 2.7rem;
+  .form-grid-row {
+    grid-template-columns: 1fr;
   }
-
-  .brand-name-text {
-    font-size: 0.9rem;
-  }
-
-  .btn-nav-gold span {
-    display: none;
-  }
-  
-  .btn-nav-gold::after {
-    content: "Reservar";
+  .vip-action-buttons {
+    flex-direction: column;
   }
 }
+
 
