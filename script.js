@@ -509,6 +509,10 @@
         });
       }
     });
+
+    if (navbar) {
+      navbar.classList.toggle('is-visible', window.scrollY > 80);
+    }
   }
 
   function onScroll() {
