@@ -433,7 +433,7 @@
 
   function resizeCanvas() {
     if (!canvas || !ctx) return;
-    const dpr = window.devicePixelRatio || 1;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
     canvasW = window.innerWidth;
     canvasH = window.innerHeight;
 
