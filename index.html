@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Residencial Los Mangos &mdash; Copán Ruinas</title>
+  
+  <meta name="description" content="Residencial Los Mangos en Copán Ruinas. Lotes exclusivos de alta plusvalía a 175m de la carretera internacional y 4 cuadras del Parque Central." />
+  
+  <!-- Ultra-Clean Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- =====================================================
+       GLOBAL FIXED DRONE BACKGROUND CANVAS
+       ===================================================== -->
+  <div class="fixed-background-stage">
+    <canvas id="bg-canvas"></canvas>
+    <div class="stage-dark-overlay"></div>
+    <div class="stage-vignette"></div>
+  </div>
+
+  <!-- Global Top Scroll Progress Line -->
+  <div class="top-scroll-progress">
+    <div id="scroll-progress-fill" class="progress-fill"></div>
+  </div>
+
+  <!-- =====================================================
+       PRELOADER
+       ===================================================== -->
+  <div id="preloader" class="preloader-overlay">
+    <div class="preloader-glass-card">
+      <img src="assets/Logos/SVG/ISOTIPO-PRINCIPAL.svg" alt="Los Mangos" class="preloader-logo" onerror="this.src='assets/Logos/PNG/ISOTIPO-TRANSPARENTE-PRINCIPAL.png'" />
+      <h2 class="preloader-title">RESIDENCIAL LOS MANGOS</h2>
+      <p class="preloader-location" data-i18n="preloader.location">COPÁN RUINAS, HONDURAS</p>
+      
+      <div class="preloader-bar-bg">
+        <div id="preloader-bar" class="preloader-bar-fill"></div>
+      </div>
+      
+      <div class="preloader-meta">
+        <span id="preloader-text" data-i18n="preloader.status">Iniciando experiencia...</span>
+        <span id="preloader-pct">0%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       TOP LUXURY NAVIGATION BAR (ISOTIPO + LANGUAGE SWITCHER)
+       ===================================================== -->
+  <header class="luxury-nav-header" id="navbar">
+    <div class="nav-wrapper">
+      <a href="#hero" class="nav-brand-link">
+        <img src="assets/Logos/SVG/ISOTIPO-PRINCIPAL.svg" alt="Residencial Los Mangos Isotipo" class="brand-isotype-img" onerror="this.src='assets/Logos/PNG/ISOTIPO-TRANSPARENTE-PRINCIPAL.png'" />
+        <span class="brand-name-text">LOS MANGOS<span class="brand-dot">.</span></span>
+      </a>
+
+      <nav class="nav-links-center">
+        <a href="#hero" class="nav-item active"><span class="nav-idx">01</span> <span data-i18n="nav.home">Inicio</span></a>
+        <a href="#concepto" class="nav-item"><span class="nav-idx">02</span> <span data-i18n="nav.concept">Concepto</span></a>
+        <a href="#solidez" class="nav-item"><span class="nav-idx">03</span> <span data-i18n="nav.trust">Solidez</span></a>
+        <a href="#masterplan" class="nav-item"><span class="nav-idx">04</span> <span data-i18n="nav.masterplan">Masterplan</span></a>
+        <a href="#inversion" class="nav-item"><span class="nav-idx">05</span> <span data-i18n="nav.investment">Inversión</span></a>
+        <a href="#financiamiento" class="nav-item"><span class="nav-idx">06</span> <span data-i18n="nav.financing">Financiamiento</span></a>
+        <a href="#contacto" class="nav-item"><span class="nav-idx">07</span> <span data-i18n="nav.contact">Contacto</span></a>
+      </nav>
+
+      <div class="nav-action-right">
+        <!-- Language Switcher Button -->
+        <button id="lang-toggle-btn" class="lang-switch-pill" title="Switch Language / Cambiar Idioma">
+          <i data-lucide="globe" class="lang-globe-icon"></i>
+          <span class="lang-label" id="lang-current-label">ES</span>
+        </button>
+
+        <a href="https://wa.me/50493613976" target="_blank" rel="noopener noreferrer" class="btn-nav-gold">
+          <span class="dot-live"></span>
+          <span data-i18n="nav.cta">Reservar Lote</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =====================================================
+       FULLPAGE 100VH SECTIONS
+       ===================================================== -->
+  <main class="viewport-scroller">
+
+    <!-- =====================================================
+         SECTION 1: HERO (EXTRA LARGE TYPOGRAPHY & GLOW BREATHING)
+         ===================================================== -->
+    <section id="hero" class="vh-section hero-section-container">
+      <div class="section-inner-flow hero-content-flow">
+        
+        <div class="hero-content-wrapper">
+          <div class="hero-tag-badge reveal-item">
+            <span class="pulse-indicator"></span>
+            <span data-i18n="hero.tag">LANZAMIENTO EXCLUSIVO &bull; COPÁN RUINAS</span>
+          </div>
+
+          <h1 class="hero-headline reveal-item">
+            <span class="hero-white-text" data-i18n="hero.title_line1">Innovando el Futuro.</span>
+            <span class="hero-gradient-text" data-i18n="hero.title_line2">Construyendo tu Legado.</span>
+          </h1>
+
+          <p class="hero-description reveal-item" data-i18n="hero.description">
+            Un enclave residencial de ultra-lujo y alta plusvalía. Lotes con topografía 100% regular a <strong>175 metros de la carretera internacional</strong> y a solo <strong>4 cuadras del Parque Central</strong>.
+          </p>
+
+          <div class="hero-btn-row reveal-item">
+            <a href="#masterplan" class="btn-gold-action">
+              <span data-i18n="hero.btn_masterplan">Explorar Masterplan</span>
+              <i data-lucide="arrow-down"></i>
+            </a>
+            <a href="#inversion" class="btn-outline-action">
+              <i data-lucide="calculator"></i>
+              <span data-i18n="hero.btn_calc">Calcular Inversión</span>
+            </a>
+          </div>
+
+          <!-- Trust / Metrics Bar Pill -->
+          <div class="hero-trust-bar reveal-item">
+            <div class="trust-pill-item rating-item">
+              <div class="stars-row">
+                <i data-lucide="star" class="star-gold"></i>
+                <i data-lucide="star" class="star-gold"></i>
+                <i data-lucide="star" class="star-gold"></i>
+                <i data-lucide="star" class="star-gold"></i>
+                <i data-lucide="star" class="star-gold"></i>
+              </div>
+              <div class="trust-text-group">
+                <span class="trust-big"><span class="odometer-num" data-target="1200" data-prefix="" data-suffix="+ v²">1,200+ v²</span></span>
+                <span class="trust-sub" data-i18n="hero.trust_lots">Lotes Disponibles</span>
+              </div>
+            </div>
+
+            <div class="trust-divider"></div>
+
+            <div class="trust-pill-item">
+              <i data-lucide="map-pin" class="trust-icon gold-accent"></i>
+              <div class="trust-text-group">
+                <span class="trust-title" data-i18n="hero.trust_road_title">175m Carretera</span>
+                <span class="trust-sub" data-i18n="hero.trust_road_sub">Acceso Pavimentado</span>
+              </div>
+            </div>
+
+            <div class="trust-divider"></div>
+
+            <div class="trust-pill-item">
+              <i data-lucide="compass" class="trust-icon green-accent"></i>
+              <div class="trust-text-group">
+                <span class="trust-title" data-i18n="hero.trust_park_title">4 Cuadras</span>
+                <span class="trust-sub" data-i18n="hero.trust_park_sub">Parque Central</span>
+              </div>
+            </div>
+
+            <div class="trust-divider"></div>
+
+            <div class="trust-pill-item">
+              <i data-lucide="shield-check" class="trust-icon gold-accent"></i>
+              <div class="trust-text-group">
+                <span class="trust-title">Banco Occidente</span>
+                <span class="trust-sub" data-i18n="hero.trust_bank_sub">80% Financiable</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-mouse-scroll reveal-item">
+            <div class="scroll-mouse-pill">
+              <div class="scroll-mouse-dot"></div>
+            </div>
+            <span data-i18n="hero.scroll_hint">Haz scroll para avanzar en el recorrido</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 2: CONCEPTO (EDITORIAL ASYMMETRICAL SPLIT)
+         ===================================================== -->
+    <section id="concepto" class="vh-section">
+      <div class="section-inner-flow wide-flow">
+        
+        <div class="editorial-split-layout">
+          
+          <!-- Left Big Statement -->
+          <div class="editorial-left-statement reveal-item">
+            <div class="badge-number-pill">
+              <span class="b-num">02</span>
+              <span class="b-text" data-i18n="concept.badge">EL CONCEPTO</span>
+            </div>
+            
+            <h2 class="editorial-main-title">
+              <span data-i18n="concept.title_part1">Innovando el Futuro.</span><br />
+              <span class="gold-accent" data-i18n="concept.title_part2">Construyendo Hoy.</span>
+            </h2>
+            
+            <p class="editorial-main-p" data-i18n="concept.subtitle">
+              Empoderamos su inversión con infraestructura de vanguardia, seguridad y una ubicación de insuperable plusvalía en el corazón de Copán Ruinas.
+            </p>
+
+            <div class="editorial-stat-box">
+              <div class="stat-highlight">
+                <span class="stat-num gold-accent"><span class="odometer-num" data-target="100" data-suffix="%">100%</span></span>
+                <span class="stat-desc">Topografía Regular & Plana lista para construir de inmediato</span>
+              </div>
+              <div class="stat-highlight">
+                <span class="stat-num green-accent"><span class="odometer-num" data-target="175" data-suffix="m">175m</span></span>
+                <span class="stat-desc">De la carretera internacional con acceso pavimentado</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Feature Stack -->
+          <div class="editorial-right-stack">
+            
+            <div class="editorial-feature-row reveal-item">
+              <span class="feat-num">01</span>
+              <div class="feat-body">
+                <h3 class="feat-title" data-i18n="concept.c1_title">Ubicación Insuperable</h3>
+                <p class="feat-desc" data-i18n="concept.c1_desc">A solo 175m de la carretera internacional con acceso directo totalmente pavimentado.</p>
+              </div>
+            </div>
+
+            <div class="editorial-feature-row active-row reveal-item">
+              <span class="feat-num gold-accent">02</span>
+              <div class="feat-body">
+                <h3 class="feat-title gold-accent" data-i18n="concept.c2_title">Topografía 100% Plana</h3>
+                <p class="feat-desc" data-i18n="concept.c2_desc">Terrenos regulares listos para construir de inmediato sin costosos movimientos de tierra.</p>
+              </div>
+            </div>
+
+            <div class="editorial-feature-row reveal-item">
+              <span class="feat-num">03</span>
+              <div class="feat-body">
+                <h3 class="feat-title" data-i18n="concept.c3_title">Centro Histórico</h3>
+                <p class="feat-desc" data-i18n="concept.c3_desc">A 4 cuadras del Parque Central de Copán Ruinas, combinando absoluta tranquilidad y cercanía.</p>
+              </div>
+            </div>
+
+            <div class="editorial-feature-row reveal-item">
+              <span class="feat-num">04</span>
+              <div class="feat-body">
+                <h3 class="feat-title" data-i18n="concept.c4_title">Seguridad & Control 24/7</h3>
+                <p class="feat-desc" data-i18n="concept.c4_desc">Muro perimetral cerrado, caseta de vigilancia privada y control de acceso sistematizado.</p>
+              </div>
+            </div>
+
+            <div class="editorial-feature-row reveal-item">
+              <span class="feat-num">05</span>
+              <div class="feat-body">
+                <h3 class="feat-title" data-i18n="concept.c5_title">Servicios Subterráneos</h3>
+                <p class="feat-desc" data-i18n="concept.c5_desc">Redes de agua potable, electricidad y fibra óptica soterradas para preservar la estética visual.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 3: SOLIDEZ (STAT PILLARS & ARCHITECTURAL GRID)
+         ===================================================== -->
+    <section id="solidez" class="vh-section">
+      <div class="section-inner-flow wide-flow">
+        
+        <div class="section-header-compact reveal-item">
+          <div class="badge-number-pill">
+            <span class="b-num">03</span>
+            <span class="b-text" data-i18n="nav.trust">SOLIDEZ</span>
+          </div>
+          <h2 class="section-title-compact" data-i18n="trust.title">Construido con Solidez. Impulsado por Resultados.</h2>
+          <p class="section-subtitle-compact" data-i18n="trust.subtitle">
+            No solo desarrollamos lotes, construimos un legado patrimonial para su familia con respaldo jurídico integral.
+          </p>
+        </div>
+
+        <div class="pillars-horizontal-grid">
+          
+          <!-- Pillar 1 -->
+          <div class="stat-pillar-card reveal-item">
+            <span class="pillar-giant-label"><span class="odometer-num" data-target="100" data-suffix="%">100%</span></span>
+            <div class="pillar-line"></div>
+            <h3 class="pillar-heading" data-i18n="trust.c1_title">Topografía Regular</h3>
+            <p class="pillar-desc" data-i18n="trust.c1_desc">Lotes planos con trazado óptimo sin gastos imprevistos de nivelación.</p>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="stat-pillar-card active-pillar reveal-item">
+            <span class="pillar-giant-label gold-accent">TÍTULOS</span>
+            <div class="pillar-line gold"></div>
+            <h3 class="pillar-heading" data-i18n="trust.c2_title">100% Inscritos</h3>
+            <p class="pillar-desc" data-i18n="trust.c2_desc">Propiedades libres de gravámenes con traspaso seguro e inmediato.</p>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="stat-pillar-card reveal-item">
+            <span class="pillar-giant-label green-accent"><span class="odometer-num" data-target="80" data-suffix="%">80%</span></span>
+            <div class="pillar-line green"></div>
+            <h3 class="pillar-heading" data-i18n="trust.c3_title">Financiamiento Bancario</h3>
+            <p class="pillar-desc" data-i18n="trust.c3_desc">Respaldo de hasta 80% a través de Banco de Occidente y BAC Honduras.</p>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div class="stat-pillar-card reveal-item">
+            <span class="pillar-giant-label">24/7</span>
+            <div class="pillar-line"></div>
+            <h3 class="pillar-heading" data-i18n="trust.c4_title">Seguridad & Control</h3>
+            <p class="pillar-desc" data-i18n="trust.c4_desc">Administración profesional del complejo y vigilancia permanente 24/7.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 4: MASTERPLAN INTERACTIVO (COMMAND CENTER)
+         ===================================================== -->
+    <section id="masterplan" class="vh-section">
+      <div class="section-inner-flow wide-flow">
+        
+        <div class="section-header-compact reveal-item">
+          <div class="badge-number-pill">
+            <span class="b-num">04</span>
+            <span class="b-text" data-i18n="mp.badge">PLANIFICACIÓN URBANA</span>
+          </div>
+          <h2 class="section-title-compact">
+            <span data-i18n="mp.title_part1">Masterplan</span> <span class="gold-accent" data-i18n="mp.title_part2">Interactivo</span>
+          </h2>
+        </div>
+
+        <div class="masterplan-command-grid">
+          
+          <!-- Left: Drone Visualizer -->
+          <div class="masterplan-viewport-container reveal-item">
+            <div class="aerial-screen">
+              <img src="assets/frames/frame_0001.png" alt="Masterplan Aéreo" class="aerial-img" />
+              <div class="aerial-dark-scrim"></div>
+
+              <svg class="aerial-svg-overlay" viewBox="0 0 1000 650" preserveAspectRatio="xMidYMid slice">
+                <polygon id="poly-block-a" class="mp-poly" points="120,180 380,140 420,310 180,360" data-block="A"></polygon>
+                <polygon id="poly-block-b" class="mp-poly active-poly" points="430,160 720,200 680,410 390,340" data-block="B"></polygon>
+                <polygon id="poly-block-c" class="mp-poly" points="690,260 920,290 880,520 630,460" data-block="C"></polygon>
+              </svg>
+
+              <div class="map-pin pin-a" data-block="A" style="top: 36%; left: 28%;">
+                <div class="pin-pulse-halo"></div>
+                <div class="pin-disc">A</div>
+              </div>
+
+              <div class="map-pin pin-b active-pin" data-block="B" style="top: 45%; left: 54%;">
+                <div class="pin-pulse-halo green"></div>
+                <div class="pin-disc green">B</div>
+              </div>
+
+              <div class="map-pin pin-c" data-block="C" style="top: 58%; left: 78%;">
+                <div class="pin-pulse-halo"></div>
+                <div class="pin-disc">C</div>
+              </div>
+
+              <div class="map-status-floating">
+                <span class="live-status-dot"></span>
+                <span id="map-label-txt">BLOQUE B SELECCIONADO</span>
+              </div>
+            </div>
+
+            <!-- Block Selector Switcher Tabs & Compare Action -->
+            <div class="mp-selector-row">
+              <button class="mp-block-btn" data-target="A">
+                <strong data-i18n="mp.tab_a_title">BLOQUE A</strong>
+                <span data-i18n="mp.tab_a_sub">Residencial Exclusivo</span>
+              </button>
+              <button class="mp-block-btn active" data-target="B">
+                <strong data-i18n="mp.tab_b_title">BLOQUE B</strong>
+                <span data-i18n="mp.tab_b_sub">Residencial & Veredas</span>
+              </button>
+              <button class="mp-block-btn" data-target="C">
+                <strong data-i18n="mp.tab_c_title">BLOQUE C</strong>
+                <span data-i18n="mp.tab_c_sub">Comercial / Mixto</span>
+              </button>
+            </div>
+            
+            <button id="open-compare-btn" class="btn-compare-blocks">
+              <i data-lucide="layers"></i>
+              <span data-i18n="mp.btn_compare">Comparar Bloques A / B / C</span>
+            </button>
+          </div>
+
+          <!-- Right: Dynamic Block Specs Deck -->
+          <div class="masterplan-specs-deck reveal-item" id="mp-specs-panel">
+            <div class="specs-top-tags">
+              <span class="badge-solid-gold" id="panel-block-code">BLOQUE B</span>
+              <span class="badge-solid-green" id="panel-block-status">Lotes Disponibles</span>
+            </div>
+
+            <h3 class="specs-main-heading" id="panel-block-title">Zona Residencial & Veredas Verdes</h3>
+            <p class="specs-main-paragraph" id="panel-block-desc">
+              Ubicado en el corazón más sereno de la residencial, con acceso directo a calles peatonales arboladas y áreas verdes protegidas. Topografía 100% plana para residencias de alto nivel.
+            </p>
+
+            <div class="specs-key-matrix">
+              <div class="matrix-cell">
+                <span class="matrix-k" data-i18n="mp.lbl_use">USO DE SUELO</span>
+                <span class="matrix-v" id="panel-spec-use">100% Residencial</span>
+              </div>
+              <div class="matrix-cell">
+                <span class="matrix-k" data-i18n="mp.lbl_topo">TOPOGRAFÍA</span>
+                <span class="matrix-v" id="panel-spec-topo">Regular / Plana</span>
+              </div>
+              <div class="matrix-cell">
+                <span class="matrix-k" data-i18n="mp.lbl_price">PRECIO POR VARA</span>
+                <span class="matrix-v gold-accent" id="panel-spec-price">$250 / v²</span>
+              </div>
+              <div class="matrix-cell">
+                <span class="matrix-k" data-i18n="mp.lbl_fin">FINANCIAMIENTO</span>
+                <span class="matrix-v" id="panel-spec-fin">Banco de Occidente (80%)</span>
+              </div>
+            </div>
+
+            <div class="specs-feature-checklist" id="panel-block-features">
+              <div class="check-item">
+                <i data-lucide="check" class="gold-accent"></i>
+                <span>Normativa estricta que prohíbe comercios ruidosos</span>
+              </div>
+              <div class="check-item">
+                <i data-lucide="check" class="gold-accent"></i>
+                <span>Conexión subterránea de agua y energía eléctrica</span>
+              </div>
+              <div class="check-item">
+                <i data-lucide="check" class="gold-accent"></i>
+                <span>Proximidad inmediata a circuitos peatonales</span>
+              </div>
+            </div>
+
+            <a href="#inversion" class="btn-gold-action full-width">
+              <span data-i18n="mp.btn_quote">Cotizar en este Bloque</span>
+              <i data-lucide="arrow-right"></i>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 5: INVERSIÓN & CALCULADORA & ROI
+         ===================================================== -->
+    <section id="inversion" class="vh-section">
+      <div class="section-inner-flow wide-flow">
+        
+        <div class="section-header-compact reveal-item">
+          <div class="badge-number-pill">
+            <span class="b-num">05</span>
+            <span class="b-text" data-i18n="inv.badge">MODELO DE INVERSIÓN</span>
+          </div>
+          <h2 class="section-title-compact">
+            <span data-i18n="inv.title_part1">Lotes listos a</span> <span class="gold-accent" id="pricing-tag-unit">$250 por Vara Cuadrada</span>.
+          </h2>
+          <p class="section-subtitle-compact" data-i18n="inv.subtitle">
+            Los impuestos de traspaso son pagados al 100% por la Desarrolladora; el comprador solo abona escrituración notarial.
+          </p>
+        </div>
+
+        <div class="investment-deck-grid">
+          
+          <!-- Left: Pricing Breakdown & ROI Simulator -->
+          <div class="pricing-feature-column reveal-item">
+            <div>
+              <div class="price-mega-display">
+                <span class="cur">$</span>
+                <span class="amt" id="main-price-num">250</span>
+                <span class="unit" id="main-price-unit">/ v²</span>
+              </div>
+
+              <div class="pricing-bullet-stack">
+                <div class="p-bullet-item">
+                  <i data-lucide="check-circle-2" class="gold-accent"></i>
+                  <div class="p-bullet-txt" data-i18n="inv.bullet1">
+                    <strong>Impuestos cubiertos por la Desarrolladora</strong> (cero costos ocultos).
+                  </div>
+                </div>
+
+                <div class="p-bullet-item">
+                  <i data-lucide="check-circle-2" class="gold-accent"></i>
+                  <div class="p-bullet-txt" data-i18n="inv.bullet2">
+                    <strong>Comprador solo paga escrituración notarial</strong>.
+                  </div>
+                </div>
+
+                <div class="p-bullet-item">
+                  <i data-lucide="check-circle-2" class="gold-accent"></i>
+                  <div class="p-bullet-txt" data-i18n="inv.bullet3">
+                    <strong>Topografía 100% regular y plana</strong> sin sobrecostos de nivelación.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ROI Projected Equity Box -->
+            <div class="roi-projection-box">
+              <div class="roi-header">
+                <span class="roi-title"><i data-lucide="trending-up" class="gold-accent"></i> <span data-i18n="inv.roi_title">Plusvalía Proyectada (8.5% Anual)</span></span>
+                <div class="roi-years-selector">
+                  <button class="roi-btn" data-years="3">3A</button>
+                  <button class="roi-btn active" data-years="5">5A</button>
+                  <button class="roi-btn" data-years="10">10A</button>
+                </div>
+              </div>
+              <div class="roi-metrics-row">
+                <div>
+                  <span class="roi-sublabel" data-i18n="inv.roi_future_val">Valor Estimado:</span>
+                  <strong class="roi-future-num gold-accent" id="roi-projected-val">$187,958 USD</strong>
+                </div>
+                <div>
+                  <span class="roi-sublabel" data-i18n="inv.roi_gain">Ganancia Patrimonial:</span>
+                  <strong class="roi-gain-num green-accent" id="roi-gain-val">+$62,958 USD</strong>
+                </div>
+              </div>
+              <div class="roi-bar-track">
+                <div class="roi-bar-fill" id="roi-bar-progress" style="width: 65%;"></div>
+              </div>
+            </div>
+
+            <div class="legal-assurance-pill">
+              <i data-lucide="shield-check" class="green-accent"></i>
+              <span data-i18n="inv.legal">Títulos de propiedad plenamente inscritos y libres de gravámenes.</span>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Mortgage Simulator -->
+          <div class="calculator-interactive-deck reveal-item">
+            <div class="calc-header-row">
+              <h3 class="calc-title"><i data-lucide="calculator" class="gold-accent"></i> <span data-i18n="inv.calc_title">Simulador Bancario</span></h3>
+              
+              <!-- Unit Selector Switcher (v2, m2, ft2) -->
+              <div class="unit-switch-pills">
+                <button class="unit-pill-btn active" data-unit="vara">v² (Varas)</button>
+                <button class="unit-pill-btn" data-unit="m2">m² (Metros)</button>
+                <button class="unit-pill-btn" data-unit="sqft">ft² (Sq Ft)</button>
+              </div>
+            </div>
+
+            <div class="calc-control-group">
+              <div class="calc-slider-header">
+                <label for="vara-slider" data-i18n="inv.lbl_area">Área del Lote:</label>
+                <span class="slider-big-readout gold-accent" id="vara-val-display">500 v²</span>
+              </div>
+              <input type="range" id="vara-slider" min="300" max="1500" step="25" value="500" class="custom-range-slider" />
+            </div>
+
+            <div class="calc-control-group">
+              <div class="calc-slider-header">
+                <label for="prima-slider" data-i18n="inv.lbl_downpayment">Prima Inicial (%):</label>
+                <span class="slider-big-readout green-accent" id="prima-pct-display">20% (Mínimo sugerido)</span>
+              </div>
+              <input type="range" id="prima-slider" min="20" max="50" step="5" value="20" class="custom-range-slider green" />
+            </div>
+
+            <div class="calc-results-deck">
+              <div class="result-block">
+                <span class="res-label" data-i18n="inv.res_total">VALOR TOTAL</span>
+                <span class="res-num-huge gold-accent" id="calc-total-usd">$125,000 USD</span>
+              </div>
+              <div class="result-block">
+                <span class="res-label" data-i18n="inv.res_prima">PRIMA</span>
+                <span class="res-num" id="calc-prima-usd">$25,000 USD</span>
+              </div>
+              <div class="result-block">
+                <span class="res-label" data-i18n="inv.res_cuota">CUOTA EST. (15 AÑOS)*</span>
+                <span class="res-num green-accent" id="calc-cuota-usd">~$955 USD/mes</span>
+              </div>
+            </div>
+
+            <!-- Instant WhatsApp Quote Button -->
+            <a href="https://wa.me/50493613976" id="whatsapp-quote-btn" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-quote">
+              <i data-lucide="message-circle"></i>
+              <span data-i18n="inv.btn_send_wa">Enviar Cotización a WhatsApp (+504 9361-3976)</span>
+            </a>
+
+            <a href="#contacto" class="btn-gold-action full-width">
+              <span data-i18n="inv.btn_prequal">Solicitar Precalificación Bancaria</span>
+              <i data-lucide="chevron-right"></i>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 6: FINANCIAMIENTO & UBICACIÓN
+         ===================================================== -->
+    <section id="financiamiento" class="vh-section">
+      <div class="section-inner-flow wide-flow">
+        
+        <div class="section-header-compact reveal-item">
+          <div class="badge-number-pill">
+            <span class="b-num">06</span>
+            <span class="b-text" data-i18n="fin.badge">FINANCIAMIENTO & LOCALIZACIÓN</span>
+          </div>
+          <h2 class="section-title-compact">
+            <span data-i18n="fin.title_part1">Respaldo con</span> <span class="gold-accent">Banco de Occidente</span> <span data-i18n="fin.title_part2">y</span> <span class="green-accent">BAC</span>.
+          </h2>
+          <p class="section-subtitle-compact" data-i18n="fin.subtitle">
+            Facilidades de crédito de hasta el 80% del valor a plazos de 10 a 15 años.
+          </p>
+        </div>
+
+        <div class="banking-location-grid">
+          
+          <!-- Bank Card -->
+          <div class="bank-feature-deck reveal-item">
+            <div class="bank-deck-header">
+              <div class="bank-icon-box"><i data-lucide="landmark"></i></div>
+              <div>
+                <h3 class="bank-deck-name">Banco de Occidente</h3>
+                <span class="bank-deck-sub" data-i18n="fin.bank_sub">Financiamiento de Terrenos</span>
+              </div>
+            </div>
+
+            <div class="bank-details-list">
+              <div class="bank-detail-row">
+                <span data-i18n="fin.row1_lbl">Financiamiento:</span>
+                <strong data-i18n="fin.row1_val">Hasta 80%</strong>
+              </div>
+              <div class="bank-detail-row">
+                <span data-i18n="fin.row2_lbl">Plazo:</span>
+                <strong data-i18n="fin.row2_val">10 a 15 años</strong>
+              </div>
+              <div class="bank-detail-row">
+                <span data-i18n="fin.row3_lbl">Prima mínima:</span>
+                <strong data-i18n="fin.row3_val">20% inicial</strong>
+              </div>
+              <div class="bank-detail-row">
+                <span data-i18n="fin.row4_lbl">Cuentas de Reserva:</span>
+                <strong>Banco de Occidente & BAC</strong>
+              </div>
+            </div>
+
+            <a href="https://wa.me/50493613976?text=Hola,%20quisiera%20asesoria%20sobre%20el%20financiamiento%20bancario%20en%20Residencial%20Los%20Mangos" target="_blank" rel="noopener noreferrer" class="btn-gold-action full-width">
+              <span data-i18n="fin.btn_advisor">Contactar Asesor Bancario</span>
+              <i data-lucide="arrow-up-right"></i>
+            </a>
+          </div>
+
+          <!-- Location Map Visual -->
+          <div class="location-feature-deck reveal-item">
+            <div class="carto-canvas-box">
+              <div class="c-road c-main"><span data-i18n="fin.map_highway">Carretera Internacional (175m)</span></div>
+              <div class="c-road c-access"><span data-i18n="fin.map_access">Acceso Los Mangos</span></div>
+
+              <div class="c-point pt-m">
+                <div class="c-pulse"></div>
+                <div class="c-badge"><i data-lucide="map-pin" class="gold-accent"></i> Residencial Los Mangos</div>
+              </div>
+
+              <div class="c-point pt-p">
+                <div class="c-badge-sec"><i data-lucide="landmark" class="green-accent"></i> <span data-i18n="fin.map_park">Parque Central (4 Cuadras)</span></div>
+              </div>
+            </div>
+
+            <div class="carto-stats-row">
+              <div class="c-stat-pill">
+                <i data-lucide="check" class="gold-accent"></i>
+                <span data-i18n="fin.leg_highway">A 175m de Carretera Internacional</span>
+              </div>
+              <div class="c-stat-pill">
+                <i data-lucide="check" class="green-accent"></i>
+                <span data-i18n="fin.leg_park">A 4 cuadras del Parque Central</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION 7: CONTACTO & RESERVAS (VIP CONCIERGE)
+         ===================================================== -->
+    <section id="contacto" class="vh-section">
+      <div class="section-inner-flow wide-flow">
+        
+        <div class="vip-concierge-grid">
+          
+          <!-- Left VIP Info -->
+          <div class="vip-left-info reveal-item">
+            <div class="badge-number-pill">
+              <span class="b-num">07</span>
+              <span class="b-text" data-i18n="contact.badge">ATENCIÓN VIP</span>
+            </div>
+
+            <h2 class="vip-heading-title">
+              <span data-i18n="contact.title_part1">Reserve su lote o agende su</span> <span class="gold-accent" data-i18n="contact.title_part2">visita guiada</span>.
+            </h2>
+
+            <p class="vip-lead-desc" data-i18n="contact.lead">
+              Atención personalizada directa con nuestro equipo de asesores en Copán Ruinas.
+            </p>
+
+            <div class="vip-action-buttons">
+              <a href="https://wa.me/50493613976" target="_blank" rel="noopener noreferrer" class="vip-contact-card">
+                <div class="vip-icon green"><i data-lucide="message-circle"></i></div>
+                <div class="vip-card-text">
+                  <span class="vip-card-tag" data-i18n="contact.wa_lbl">WhatsApp Inmobiliario</span>
+                  <strong class="vip-card-val">+504 9361-3976</strong>
+                </div>
+                <i data-lucide="arrow-up-right" class="vip-arrow"></i>
+              </a>
+
+              <a href="tel:+50493613976" class="vip-contact-card">
+                <div class="vip-icon gold"><i data-lucide="phone"></i></div>
+                <div class="vip-card-text">
+                  <span class="vip-card-tag" data-i18n="contact.phone_lbl">Llamada Directa</span>
+                  <strong class="vip-card-val">+504 9361-3976</strong>
+                </div>
+                <i data-lucide="arrow-up-right" class="vip-arrow"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right VIP Form -->
+          <div class="vip-right-form-deck reveal-item">
+            <h3 class="vip-form-title" data-i18n="contact.form_title">Solicitud de Reserva / Asesoría</h3>
+            
+            <form id="contact-form" onsubmit="event.preventDefault(); alert(window.currentLang === 'en' ? 'Thank you for your interest! An advisor from Residencial Los Mangos will contact you shortly.' : '¡Gracias por su interés! Un asesor de Residencial Los Mangos se pondrá en contacto en breve.');">
+              
+              <div class="form-grid-row">
+                <div class="form-input-field">
+                  <label for="f-name" data-i18n="contact.form_name">Nombre Completo *</label>
+                  <input type="text" id="f-name" placeholder="Ej. Carlos Mendoza" required class="modern-input" />
+                </div>
+                <div class="form-input-field">
+                  <label for="f-phone" data-i18n="contact.form_phone">WhatsApp / Teléfono *</label>
+                  <input type="tel" id="f-phone" placeholder="+504 9361-3976" required class="modern-input" />
+                </div>
+              </div>
+
+              <div class="form-grid-row">
+                <div class="form-input-field">
+                  <label for="f-email" data-i18n="contact.form_email">Correo Electrónico *</label>
+                  <input type="email" id="f-email" placeholder="carlos@correo.com" required class="modern-input" />
+                </div>
+                <div class="form-input-field">
+                  <label for="f-block" data-i18n="contact.form_block">Bloque de Interés</label>
+                  <select id="f-block" class="modern-select">
+                    <option value="A" data-i18n="contact.opt_block_a">Bloque A — Residencial Exclusivo</option>
+                    <option value="B" selected data-i18n="contact.opt_block_b">Bloque B — Residencial & Veredas</option>
+                    <option value="C" data-i18n="contact.opt_block_c">Bloque C — Comercial / Mixto</option>
+                  </select>
+                </div>
+              </div>
+
+              <button type="submit" class="btn-gold-action full-width vip-submit-btn">
+                <span data-i18n="contact.form_submit">Enviar Solicitud Inmediata</span>
+                <i data-lucide="send"></i>
+              </button>
+
+              <p class="vip-privacy-notice"><i data-lucide="lock"></i> <span data-i18n="contact.privacy">Su información se maneja con estricta confidencialidad.</span></p>
+            </form>
+          </div>
+
+        </div>
+
+        <!-- Clean Bottom Line -->
+        <div class="vip-bottom-footer reveal-item">
+          <span>&copy; 2026 <strong>Residencial Los Mangos</strong> &bull; Copán Ruinas, Honduras</span>
+          <div class="vip-footer-pills">
+            <span class="vip-pill-badge" data-i18n="footer.b1">Topografía Regular</span>
+            <span class="vip-pill-badge">$250/v²</span>
+            <span class="vip-pill-badge">Banco de Occidente</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================
+       BLOCK COMPARISON MODAL DRAWER (A vs B vs C)
+       ===================================================== -->
+  <div id="compare-modal" class="compare-modal-backdrop">
+    <div class="compare-drawer-panel">
+      <div class="compare-drawer-header">
+        <div>
+          <h3 class="compare-drawer-title" data-i18n="compare.title">Comparativa Integral de Bloques</h3>
+          <p class="compare-drawer-sub" data-i18n="compare.sub">Analice las características exclusivas de cada zona de Residencial Los Mangos</p>
+        </div>
+        <button id="close-compare-btn" class="close-drawer-btn" title="Cerrar"><i data-lucide="x"></i></button>
+      </div>
+
+      <div class="compare-table-wrapper">
+        <table class="compare-matrix-table">
+          <thead>
+            <tr>
+              <th data-i18n="compare.col_feature">Característica</th>
+              <th class="th-block-a">BLOQUE A</th>
+              <th class="th-block-b active-col">BLOQUE B (Recomendado)</th>
+              <th class="th-block-c">BLOQUE C</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-i18n="compare.row_use">Uso de Suelo</td>
+              <td>100% Residencial</td>
+              <td class="active-col">100% Residencial</td>
+              <td>Mixto / Comercial Selecto</td>
+            </tr>
+            <tr>
+              <td data-i18n="compare.row_elevation">Elevación & Vistas</td>
+              <td>Máxima / Vistas a Cordillera</td>
+              <td class="active-col">Plana / Vista a Jardines</td>
+              <td>Plana / Vista al Boulevard</td>
+            </tr>
+            <tr>
+              <td data-i18n="compare.row_trails">Acceso a Veredas</td>
+              <td>Directo</td>
+              <td class="active-col">Inmediato & Protegido</td>
+              <td>Sobre Avenida Principal</td>
+            </tr>
+            <tr>
+              <td data-i18n="compare.row_privacy">Nivel de Privacidad</td>
+              <td>Ultra-Privado (Cero Tráfico)</td>
+              <td class="active-col">Alta Tranquilidad Familiar</td>
+              <td>Flujo Dinámico Controlado</td>
+            </tr>
+            <tr>
+              <td data-i18n="compare.row_topo">Topografía</td>
+              <td>Regular / Suave Pendiente</td>
+              <td class="active-col">100% Plana Regular</td>
+              <td>100% Plana Regular</td>
+            </tr>
+            <tr>
+              <td data-i18n="compare.row_price">Precio Base</td>
+              <td>$250 USD / v²</td>
+              <td class="active-col gold-accent"><strong>$250 USD / v²</strong></td>
+              <td>$250 USD / v²</td>
+            </tr>
+            <tr>
+              <td data-i18n="compare.row_fin">Financiamiento</td>
+              <td>Hasta 80% Banco Occidente</td>
+              <td class="active-col">Hasta 80% Banco Occidente</td>
+              <td>Banco Occidente & BAC</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><button class="btn-select-compare" data-select-block="A" data-i18n="compare.select_a">Seleccionar A</button></td>
+              <td class="active-col"><button class="btn-select-compare gold-btn" data-select-block="B" data-i18n="compare.select_b">Seleccionar B</button></td>
+              <td><button class="btn-select-compare" data-select-block="C" data-i18n="compare.select_c">Seleccionar C</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
