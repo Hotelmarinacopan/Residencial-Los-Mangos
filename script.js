@@ -351,12 +351,6 @@
   let currentProgress = 0;
   let lastRenderedFrame = -1;
 
-  // Velocity blur tracking
-  let lastScrollY = window.scrollY;
-  let lastScrollTime = performance.now();
-  let scrollVelocity = 0;
-  let blurTimeout = null;
-
   function getFrameSrc(index) {
     const pad = String(index).padStart(4, '0');
     return `assets/frames/frame_${pad}.webp`;
@@ -522,30 +516,7 @@
   }
 
   function onScroll() {
-    const now = performance.now();
     const currentY = window.pageYOffset || document.documentElement.scrollTop || 0;
-    const dt = Math.max(1, now - lastScrollTime);
-    const dy = Math.abs(currentY - lastScrollY);
-    scrollVelocity = (dy / dt) * 100;
-
-    lastScrollY = currentY;
-    lastScrollTime = now;
-
-    // Depth of Field Blur on fast scroll
-    if (canvas) {
-      if (scrollVelocity > 15) {
-        const blurPx = Math.min(5, (scrollVelocity - 15) * 0.08);
-        canvas.style.filter = `blur(${blurPx.toFixed(1)}px)`;
-      } else {
-        canvas.style.filter = 'blur(0px)';
-      }
-    }
-
-    clearTimeout(blurTimeout);
-    blurTimeout = setTimeout(() => {
-      if (canvas) canvas.style.filter = 'blur(0px)';
-    }, 120);
-
     const maxScroll = Math.max(
       document.body.scrollHeight,
       document.documentElement.scrollHeight
