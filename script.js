@@ -364,29 +364,45 @@
       images[START_FRAME] = firstImg;
       loadedCount++;
       drawFrame(START_FRAME);
+      
+      // Instant reveal: Hide preloader immediately as soon as initial frame is ready!
+      if (preloader) {
+        preloader.classList.add('is-loaded');
+      }
+
+      // Progressively load all remaining frames in non-blocking background tiers
       loadRestOfFrames();
     };
 
     firstImg.onerror = () => {
+      if (preloader) preloader.classList.add('is-loaded');
       loadRestOfFrames();
     };
   }
 
   function loadRestOfFrames() {
-    const step = 5;
-    const priorityIndices = [];
-    const remainingIndices = [];
-
-    for (let i = 1; i <= TOTAL_FRAMES; i += step) {
-      if (i !== START_FRAME) priorityIndices.push(i);
+    // Tier 1: Keyframe every 10 frames (Fastest initial coverage: 37 frames)
+    const tier1 = [];
+    for (let i = 1; i <= TOTAL_FRAMES; i += 10) {
+      if (i !== START_FRAME) tier1.push(i);
     }
+
+    // Tier 2: Midpoints every 5 frames
+    const tier2 = [];
+    for (let i = 1; i <= TOTAL_FRAMES; i += 5) {
+      if (!tier1.includes(i) && i !== START_FRAME) tier2.push(i);
+    }
+
+    // Tier 3: All remaining frames
+    const tier3 = [];
     for (let i = 1; i <= TOTAL_FRAMES; i++) {
-      if (i !== START_FRAME && i % step !== 0) remainingIndices.push(i);
+      if (!tier1.includes(i) && !tier2.includes(i) && i !== START_FRAME) {
+        tier3.push(i);
+      }
     }
 
-    const loadQueue = [...priorityIndices, ...remainingIndices];
-    let completed = loadedCount;
-    const concurrency = 8;
+    const loadQueue = [...tier1, ...tier2, ...tier3];
+    const concurrency = 6;
     let queuePointer = 0;
 
     function loadNext() {
@@ -398,33 +414,17 @@
 
       img.onload = () => {
         images[frameIdx] = img;
-        completed++;
-        updatePreloader(completed);
+        loadedCount++;
         loadNext();
       };
 
       img.onerror = () => {
-        completed++;
-        updatePreloader(completed);
         loadNext();
       };
     }
 
     for (let c = 0; c < concurrency; c++) {
       loadNext();
-    }
-  }
-
-  function updatePreloader(count) {
-    const pct = Math.min(100, Math.round((count / TOTAL_FRAMES) * 100));
-    if (preloaderBar) preloaderBar.style.width = `${pct}%`;
-    if (preloaderPct) preloaderPct.textContent = `${pct}%`;
-
-    if (count >= 20 && preloader && !preloader.classList.contains('is-loaded')) {
-      if (preloaderText) preloaderText.textContent = currentLang === 'en' ? 'Experience ready...' : 'Experiencia lista...';
-      setTimeout(() => {
-        preloader.classList.add('is-loaded');
-      }, 250);
     }
   }
 
