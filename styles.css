@@ -139,12 +139,12 @@ body {
 }
 
 /* =========================================================
-   CINEMATIC SCROLL REVEAL STAGGER SYSTEM
+   CINEMATIC SCROLL REVEAL STAGGER SYSTEM (SILKY SMOOTH)
    ========================================================= */
 .reveal-item {
   opacity: 0;
-  transform: translateY(35px);
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(16px);
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: opacity, transform;
 }
 
@@ -164,7 +164,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s ease;
+  transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.5s ease;
 }
 
 .preloader-overlay.is-loaded {
@@ -229,7 +229,7 @@ body {
 }
 
 /* =========================================================
-   TOP LUXURY NAVIGATION BAR (ISOTIPO + LANGUAGE SWITCHER)
+   TOP LUXURY NAVIGATION BAR (CONSTANT, NO COMPACTING)
    ========================================================= */
 .luxury-nav-header {
   position: fixed;
@@ -237,16 +237,11 @@ body {
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 1.4rem 4rem;
-  transition: var(--transition-smooth);
-}
-
-.luxury-nav-header.is-scrolled {
-  padding: 0.9rem 4rem;
-  background: rgba(7, 9, 8, 0.92);
+  padding: 1rem 3.5rem;
+  background: rgba(7, 9, 8, 0.94);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-subtle);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
 .nav-wrapper {

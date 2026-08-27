@@ -90,9 +90,8 @@
         </a>
 
         <!-- Mobile Hamburger Toggle Button -->
-        <button id="mobile-menu-toggle" class="mobile-hamburger-btn" aria-label="Abrir Menú">
-          <i data-lucide="menu" id="hamburger-icon-open"></i>
-          <i data-lucide="x" id="hamburger-icon-close"></i>
+        <button id="mobile-menu-toggle" class="mobile-hamburger-btn" aria-label="Abrir Menú" onclick="document.getElementById('mobile-menu-drawer').classList.add('is-open');">
+          <i data-lucide="menu"></i>
         </button>
       </div>
     </div>
@@ -105,7 +104,7 @@
         <img src="assets/Logos/SVG/ISOTIPO-PRINCIPAL.svg" alt="Los Mangos" class="brand-isotype-img" onerror="this.src='assets/Logos/PNG/ISOTIPO-TRANSPARENTE-PRINCIPAL.png'" />
         <span class="brand-name-text">LOS MANGOS<span class="brand-dot">.</span></span>
       </div>
-      <button id="mobile-drawer-close" class="mobile-hamburger-btn is-active" aria-label="Cerrar Menú">
+      <button id="mobile-drawer-close" class="mobile-hamburger-btn is-active" aria-label="Cerrar Menú" onclick="document.getElementById('mobile-menu-drawer').classList.remove('is-open');">
         <i data-lucide="x"></i>
       </button>
     </div>

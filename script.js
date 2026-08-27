@@ -509,10 +509,6 @@
         });
       }
     });
-
-    if (navbar) {
-      navbar.classList.toggle('is-scrolled', window.scrollY > 40);
-    }
   }
 
   function onScroll() {
