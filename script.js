@@ -330,7 +330,7 @@
   }
 
   /* =========================================================
-     1. DRONE SCRUBBING & DEPTH-OF-FIELD VELOCITY BLUR
+     1. DUAL-LAYER DRONE ENGINE: LOW-RES SKELETON + HD SWAP
      ========================================================= */
   const TOTAL_FRAMES = 375;
   const START_FRAME = 1;
@@ -339,93 +339,135 @@
   const canvas = document.getElementById('bg-canvas');
   const ctx = canvas ? canvas.getContext('2d') : null;
   const scrollProgressFill = document.getElementById('scroll-progress-fill');
-
   const preloader = document.getElementById('preloader');
-  const preloaderBar = document.getElementById('preloader-bar');
-  const preloaderPct = document.getElementById('preloader-pct');
-  const preloaderText = document.getElementById('preloader-text');
 
-  const images = new Array(TOTAL_FRAMES + 1);
-  let loadedCount = 0;
+  // Dual frame stores (Fast low-res skeleton + High-res 1080p)
+  const lowImages = new Array(TOTAL_FRAMES + 1);
+  const hdImages = new Array(TOTAL_FRAMES + 1);
+
   let targetProgress = 0;
   let currentProgress = 0;
   let lastRenderedFrame = -1;
 
-  function getFrameSrc(index) {
+  function getLowFrameSrc(index) {
+    const pad = String(index).padStart(4, '0');
+    return `assets/frames_low/frame_${pad}.webp`;
+  }
+
+  function getHdFrameSrc(index) {
     const pad = String(index).padStart(4, '0');
     return `assets/frames/frame_${pad}.webp`;
   }
 
   function initFrameLoading() {
-    const firstImg = new Image();
-    firstImg.src = getFrameSrc(START_FRAME);
+    // Instant initial draw: Load frame 1 in low-res and HD
+    const firstLow = new Image();
+    firstLow.src = getLowFrameSrc(START_FRAME);
 
-    firstImg.onload = () => {
-      images[START_FRAME] = firstImg;
-      loadedCount++;
-      drawFrame(START_FRAME);
-      
-      // Instant reveal: Hide preloader immediately as soon as initial frame is ready!
-      if (preloader) {
-        preloader.classList.add('is-loaded');
+    const firstHd = new Image();
+    firstHd.src = getHdFrameSrc(START_FRAME);
+
+    let firstLoaded = false;
+    function onFirstReady(img, isHd) {
+      if (isHd) hdImages[START_FRAME] = img;
+      else lowImages[START_FRAME] = img;
+
+      if (!firstLoaded) {
+        firstLoaded = true;
+        drawFrame(START_FRAME);
+        if (preloader) preloader.classList.add('is-loaded');
+
+        // Start dual progressive streams:
+        startLowResStream();
+        startHdStream();
+      } else {
+        drawFrame(START_FRAME);
       }
+    }
 
-      // Progressively load all remaining frames in non-blocking background tiers
-      loadRestOfFrames();
-    };
+    firstLow.onload = () => onFirstReady(firstLow, false);
+    firstHd.onload = () => onFirstReady(firstHd, true);
 
-    firstImg.onerror = () => {
+    firstLow.onerror = () => {
       if (preloader) preloader.classList.add('is-loaded');
-      loadRestOfFrames();
+      startLowResStream();
+      startHdStream();
     };
   }
 
-  function loadRestOfFrames() {
-    // Tier 1: Keyframe every 10 frames (Fastest initial coverage: 37 frames)
+  // Priority Stream A: Fast Low-Res Skeleton (downloads ~38KB frames rapidly with high concurrency)
+  function startLowResStream() {
+    const p1 = [];
+    const p2 = [];
+    for (let i = 1; i <= TOTAL_FRAMES; i += 5) {
+      if (i !== START_FRAME) p1.push(i);
+    }
+    for (let i = 1; i <= TOTAL_FRAMES; i++) {
+      if (i !== START_FRAME && i % 5 !== 0) p2.push(i);
+    }
+
+    const queue = [...p1, ...p2];
+    const concurrency = 10;
+    let ptr = 0;
+
+    function loadNext() {
+      if (ptr >= queue.length) return;
+      const idx = queue[ptr++];
+      const img = new Image();
+      img.src = getLowFrameSrc(idx);
+
+      img.onload = () => {
+        lowImages[idx] = img;
+        const currentTarget = Math.min(TOTAL_FRAMES, Math.max(1, Math.round(1 + currentProgress * (TOTAL_FRAMES - 1))));
+        if (currentTarget === idx && !hdImages[idx]) {
+          drawFrame(idx);
+        }
+        loadNext();
+      };
+      img.onerror = () => loadNext();
+    }
+
+    for (let c = 0; c < concurrency; c++) loadNext();
+  }
+
+  // Priority Stream B: Seamless HD Swap in Background
+  function startHdStream() {
     const tier1 = [];
+    const tier2 = [];
+    const tier3 = [];
     for (let i = 1; i <= TOTAL_FRAMES; i += 10) {
       if (i !== START_FRAME) tier1.push(i);
     }
-
-    // Tier 2: Midpoints every 5 frames
-    const tier2 = [];
     for (let i = 1; i <= TOTAL_FRAMES; i += 5) {
       if (!tier1.includes(i) && i !== START_FRAME) tier2.push(i);
     }
-
-    // Tier 3: All remaining frames
-    const tier3 = [];
     for (let i = 1; i <= TOTAL_FRAMES; i++) {
       if (!tier1.includes(i) && !tier2.includes(i) && i !== START_FRAME) {
         tier3.push(i);
       }
     }
 
-    const loadQueue = [...tier1, ...tier2, ...tier3];
+    const queue = [...tier1, ...tier2, ...tier3];
     const concurrency = 6;
-    let queuePointer = 0;
+    let ptr = 0;
 
     function loadNext() {
-      if (queuePointer >= loadQueue.length) return;
-
-      const frameIdx = loadQueue[queuePointer++];
+      if (ptr >= queue.length) return;
+      const idx = queue[ptr++];
       const img = new Image();
-      img.src = getFrameSrc(frameIdx);
+      img.src = getHdFrameSrc(idx);
 
       img.onload = () => {
-        images[frameIdx] = img;
-        loadedCount++;
+        hdImages[idx] = img;
+        if (lastRenderedFrame === idx) {
+          drawFrame(idx);
+        }
         loadNext();
       };
-
-      img.onerror = () => {
-        loadNext();
-      };
+      img.onerror = () => loadNext();
     }
 
-    for (let c = 0; c < concurrency; c++) {
-      loadNext();
-    }
+    for (let c = 0; c < concurrency; c++) loadNext();
   }
 
   let canvasW = 0;
@@ -451,8 +493,16 @@
 
   function drawFrame(frameIndex) {
     if (!ctx) return;
-    let img = images[frameIndex];
 
+    // 1. Prefer HD frame
+    let img = hdImages[frameIndex];
+
+    // 2. Fallback to Low-Res frame
+    if (!img || !img.complete || img.naturalWidth === 0) {
+      img = lowImages[frameIndex];
+    }
+
+    // 3. Fallback to Nearest Loaded (search outward)
     if (!img || !img.complete || img.naturalWidth === 0) {
       img = findNearestLoaded(frameIndex);
     }
@@ -475,17 +525,24 @@
   }
 
   function findNearestLoaded(target) {
-    if (images[target] && images[target].complete && images[target].naturalWidth > 0) {
-      return images[target];
+    if (hdImages[target] && hdImages[target].complete && hdImages[target].naturalWidth > 0) {
+      return hdImages[target];
     }
+    if (lowImages[target] && lowImages[target].complete && lowImages[target].naturalWidth > 0) {
+      return lowImages[target];
+    }
+
     for (let offset = 1; offset < TOTAL_FRAMES; offset++) {
       const up = target + offset;
       const down = target - offset;
-      if (up <= TOTAL_FRAMES && images[up] && images[up].complete && images[up].naturalWidth > 0) {
-        return images[up];
+
+      if (up <= TOTAL_FRAMES) {
+        if (hdImages[up] && hdImages[up].complete && hdImages[up].naturalWidth > 0) return hdImages[up];
+        if (lowImages[up] && lowImages[up].complete && lowImages[up].naturalWidth > 0) return lowImages[up];
       }
-      if (down >= 1 && images[down] && images[down].complete && images[down].naturalWidth > 0) {
-        return images[down];
+      if (down >= 1) {
+        if (hdImages[down] && hdImages[down].complete && hdImages[down].naturalWidth > 0) return hdImages[down];
+        if (lowImages[down] && lowImages[down].complete && lowImages[down].naturalWidth > 0) return lowImages[down];
       }
     }
     return null;
