@@ -359,7 +359,7 @@
 
   function getFrameSrc(index) {
     const pad = String(index).padStart(4, '0');
-    return `assets/frames/frame_${pad}.png`;
+    return `assets/frames/frame_${pad}.webp`;
   }
 
   function initFrameLoading() {
