@@ -900,6 +900,7 @@
   const btnModeDrone = document.getElementById('btn-mode-drone');
   const mpBlueprintImg = document.getElementById('mp-blueprint-img');
   const mpDroneImg = document.getElementById('mp-drone-img');
+  const masterplanScreenBox = document.getElementById('masterplan-screen-box');
 
   function setMasterplanViewMode(mode) {
     if (mode === 'drone') {
@@ -907,11 +908,13 @@
       if (btnModeBlueprint) btnModeBlueprint.classList.remove('active');
       if (mpDroneImg) mpDroneImg.classList.add('active-view');
       if (mpBlueprintImg) mpBlueprintImg.classList.remove('active-view');
+      if (masterplanScreenBox) masterplanScreenBox.classList.add('drone-view');
     } else {
       if (btnModeBlueprint) btnModeBlueprint.classList.add('active');
       if (btnModeDrone) btnModeDrone.classList.remove('active');
       if (mpBlueprintImg) mpBlueprintImg.classList.add('active-view');
       if (mpDroneImg) mpDroneImg.classList.remove('active-view');
+      if (masterplanScreenBox) masterplanScreenBox.classList.remove('drone-view');
     }
   }
 
