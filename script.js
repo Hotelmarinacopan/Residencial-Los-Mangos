@@ -339,81 +339,6 @@
   }
 
   /* =========================================================
-     0.5 THEME SYSTEM (AUTO BROWSER / OS DETECTION & MANUAL TOGGLE)
-     ========================================================= */
-  let currentTheme = 'dark';
-
-  function detectInitialTheme() {
-    const saved = localStorage.getItem('los_mangos_theme');
-    if (saved && (saved === 'dark' || saved === 'light')) {
-      return saved;
-    }
-    // Auto-detect based on OS / Browser prefers-color-scheme
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-      return 'light';
-    }
-    return 'dark';
-  }
-
-  function applyTheme(theme, save = true) {
-    currentTheme = theme;
-    document.documentElement.setAttribute('data-theme', theme);
-    if (save) {
-      localStorage.setItem('los_mangos_theme', theme);
-    }
-
-    const themeToggleBtn = document.getElementById('theme-toggle-btn');
-    const mobileThemeToggleBtn = document.getElementById('mobile-theme-toggle-btn');
-    const mobileThemeLabel = document.getElementById('mobile-theme-label');
-
-    const isLight = theme === 'light';
-    const nextThemeTitle = isLight
-      ? (currentLang === 'en' ? 'Switch to Dark Mode' : 'Cambiar a Modo Oscuro')
-      : (currentLang === 'en' ? 'Switch to Light Mode' : 'Cambiar a Modo Claro');
-
-    if (themeToggleBtn) {
-      themeToggleBtn.setAttribute('title', nextThemeTitle);
-      themeToggleBtn.setAttribute('aria-label', nextThemeTitle);
-    }
-
-    if (mobileThemeLabel) {
-      mobileThemeLabel.textContent = isLight
-        ? (currentLang === 'en' ? 'Dark Mode' : 'Modo Oscuro')
-        : (currentLang === 'en' ? 'Light Mode' : 'Modo Claro');
-    }
-
-    if (mobileThemeToggleBtn) {
-      mobileThemeToggleBtn.setAttribute('title', nextThemeTitle);
-    }
-
-    if (window.lucide) lucide.createIcons();
-  }
-
-  function toggleTheme() {
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    applyTheme(newTheme, true);
-  }
-
-  const themeToggleBtn = document.getElementById('theme-toggle-btn');
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener('click', toggleTheme);
-  }
-
-  const mobileThemeToggleBtn = document.getElementById('mobile-theme-toggle-btn');
-  if (mobileThemeToggleBtn) {
-    mobileThemeToggleBtn.addEventListener('click', toggleTheme);
-  }
-
-  // OS / Browser Color Scheme Change Listener (Auto-reactive if no explicit localStorage override)
-  if (window.matchMedia) {
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-      if (!localStorage.getItem('los_mangos_theme')) {
-        applyTheme(e.matches ? 'dark' : 'light', false);
-      }
-    });
-  }
-
-  /* =========================================================
      0.6 BRAND LOGO SMOOTH SCROLL TO HERO (REPLACES NAV INICIO)
      ========================================================= */
   const navBrandLogo = document.getElementById('nav-brand-logo');
@@ -1116,9 +1041,6 @@
      5. INITIALIZATION
      ========================================================= */
   function init() {
-    const initialTheme = detectInitialTheme();
-    applyTheme(initialTheme, false);
-
     const initialLang = detectInitialLanguage();
     setLanguage(initialLang);
 
