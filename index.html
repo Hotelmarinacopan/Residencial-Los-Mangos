@@ -426,39 +426,53 @@
             </div>
 
             <!-- Block Selector Switcher Tabs & Compare Action -->
-            <div class="mp-selector-row">
-              <button class="mp-block-btn" data-target="A">
-                <strong data-i18n="mp.tab_a_title">BLOQUE A</strong>
-                <span data-i18n="mp.tab_a_sub">Lotes 1 al 7 &bull; Norte</span>
-              </button>
-              <button class="mp-block-btn active" data-target="B">
-                <strong data-i18n="mp.tab_b_title">BLOQUE B</strong>
-                <span data-i18n="mp.tab_b_sub">Lotes 1 al 5 &bull; Centro</span>
-              </button>
-              <button class="mp-block-btn" data-target="C">
-                <strong data-i18n="mp.tab_c_title">BLOQUE C</strong>
-                <span data-i18n="mp.tab_c_sub">Lotes 1 al 4 &bull; Sur</span>
+            <div class="mp-controls-deck">
+              <div class="mp-selector-row">
+                <button class="mp-block-btn" data-target="A">
+                  <strong data-i18n="mp.tab_a_title">BLOQUE A</strong>
+                  <span data-i18n="mp.tab_a_sub">Lotes 1 al 7 &bull; Norte</span>
+                </button>
+                <button class="mp-block-btn active" data-target="B">
+                  <strong data-i18n="mp.tab_b_title">BLOQUE B</strong>
+                  <span data-i18n="mp.tab_b_sub">Lotes 1 al 5 &bull; Centro</span>
+                </button>
+                <button class="mp-block-btn" data-target="C">
+                  <strong data-i18n="mp.tab_c_title">BLOQUE C</strong>
+                  <span data-i18n="mp.tab_c_sub">Lotes 1 al 4 &bull; Sur</span>
+                </button>
+              </div>
+              
+              <button id="open-compare-btn" class="btn-compare-blocks">
+                <i data-lucide="layers"></i>
+                <span data-i18n="mp.btn_compare">Comparar Bloques A / B / C</span>
               </button>
             </div>
-            
-            <button id="open-compare-btn" class="btn-compare-blocks">
-              <i data-lucide="layers"></i>
-              <span data-i18n="mp.btn_compare">Comparar Bloques A / B / C</span>
-            </button>
           </div>
 
-          <!-- Right: Dynamic Block Specs Deck -->
+          <!-- Right: Redesigned Dynamic Block Specs Deck -->
           <div class="masterplan-specs-deck reveal-item" id="mp-specs-panel">
-            <div class="specs-top-tags">
-              <span class="badge-solid-gold" id="panel-block-code">BLOQUE B</span>
-              <span class="badge-solid-green" id="panel-block-status">Lotes Disponibles</span>
+            
+            <!-- Deck Top Header -->
+            <div class="specs-deck-header">
+              <div class="deck-tag-group">
+                <span class="badge-solid-gold" id="panel-block-code">BLOQUE B</span>
+                <span class="badge-solid-green" id="panel-block-status">Lotes Disponibles</span>
+              </div>
+              <div class="deck-price-tag">
+                <span class="deck-price-lbl" data-i18n="mp.lbl_price">PRECIO ESTIMADO</span>
+                <span class="deck-price-val gold-accent" id="panel-spec-price">$250 / v²</span>
+              </div>
             </div>
 
-            <h3 class="specs-main-heading" id="panel-block-title">Zona Residencial & Veredas Verdes</h3>
-            <p class="specs-main-paragraph" id="panel-block-desc">
-              Ubicado en el corazón más sereno de la residencial, con acceso directo a calles peatonales arboladas y áreas verdes protegidas. Topografía 100% plana para residencias de alto nivel.
-            </p>
+            <!-- Deck Main Content -->
+            <div class="deck-intro-section">
+              <h3 class="specs-main-heading" id="panel-block-title">Zona Residencial & Veredas Verdes</h3>
+              <p class="specs-main-paragraph" id="panel-block-desc">
+                Ubicado en el corazón más sereno de la residencial, con acceso directo a calles peatonales arboladas y áreas verdes protegidas. Topografía 100% plana para residencias de alto nivel.
+              </p>
+            </div>
 
+            <!-- 3-Column Key Metric Strip -->
             <div class="specs-key-matrix">
               <div class="matrix-cell">
                 <span class="matrix-k" data-i18n="mp.lbl_use">USO DE SUELO</span>
@@ -469,35 +483,43 @@
                 <span class="matrix-v" id="panel-spec-topo">Regular / Plana</span>
               </div>
               <div class="matrix-cell">
-                <span class="matrix-k" data-i18n="mp.lbl_price">PRECIO POR VARA</span>
-                <span class="matrix-v gold-accent" id="panel-spec-price">$250 / v²</span>
-              </div>
-              <div class="matrix-cell">
                 <span class="matrix-k" data-i18n="mp.lbl_fin">COMPRA & ASESORÍA</span>
                 <span class="matrix-v" id="panel-spec-fin" data-i18n="mp.val_fin">Gestión Directa</span>
               </div>
             </div>
 
-            <div class="specs-feature-checklist" id="panel-block-features">
-              <div class="check-item">
-                <i data-lucide="check" class="gold-accent"></i>
-                <span>Normativa estricta que prohíbe comercios ruidosos</span>
-              </div>
-              <div class="check-item">
-                <i data-lucide="check" class="gold-accent"></i>
-                <span>Conexión de agua y energía eléctrica en cada lote</span>
-              </div>
-              <div class="check-item">
-                <i data-lucide="check" class="gold-accent"></i>
-                <span>Proximidad inmediata a circuitos peatonales</span>
+            <!-- Features Highlights -->
+            <div class="specs-features-container">
+              <span class="specs-features-label">ESPECIFICACIONES DEL SECTOR</span>
+              <div class="specs-feature-checklist" id="panel-block-features">
+                <div class="check-item">
+                  <i data-lucide="check" class="gold-accent"></i>
+                  <span>Normativa estricta que prohíbe comercios ruidosos</span>
+                </div>
+                <div class="check-item">
+                  <i data-lucide="check" class="gold-accent"></i>
+                  <span>Conexión de agua y energía eléctrica en cada lote</span>
+                </div>
+                <div class="check-item">
+                  <i data-lucide="check" class="gold-accent"></i>
+                  <span>Proximidad inmediata a circuitos peatonales</span>
+                </div>
               </div>
             </div>
 
-            <a href="#inversion" class="btn-gold-action full-width">
-              <span data-i18n="mp.btn_quote">Cotizar con Asesor</span>
-              <i data-lucide="arrow-right"></i>
-            </a>
+            <!-- Bottom CTA -->
+            <div class="specs-deck-cta-wrap">
+              <a href="#inversion" class="btn-gold-action full-width">
+                <span data-i18n="mp.btn_quote">Cotizar Lote en este Bloque</span>
+                <i data-lucide="arrow-right"></i>
+              </a>
+            </div>
+
           </div>
+
+        </div>
+      </div>
+    </section>
 
         </div>
 
