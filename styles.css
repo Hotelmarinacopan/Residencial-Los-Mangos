@@ -34,8 +34,13 @@
   --text-secondary: #d4dcd7;
   --text-muted: #95a29b;
 
-  --font-main: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Typography Systems */
+  --font-serif: 'Cinzel', 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'Space Grotesk', monospace;
+
+  --font-title: var(--font-serif);
+  --font-main: var(--font-sans);
 
   --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -64,6 +69,43 @@ body {
   width: 100%;
   position: relative;
   font-size: 16px;
+  font-family: var(--font-main);
+}
+
+/* Classical Roman Serif Headings */
+h1, h2, h3, h4, h5, h6,
+.hero-headline,
+.section-title-compact,
+.editorial-main-title,
+.pillar-giant-label,
+.pillar-heading,
+.specs-main-heading,
+.bank-deck-name,
+.compare-title,
+.calc-title,
+.vip-form-title,
+.vip-concierge-title,
+.brand-name-text,
+.preloader-title {
+  font-family: var(--font-serif);
+  letter-spacing: 0.02em;
+}
+
+/* Geometric Sans-Serif Subtitles, Texts & UI */
+p, span, a, button, input, label, select, textarea,
+.section-subtitle-compact,
+.hero-description,
+.editorial-main-p,
+.feat-title,
+.feat-desc,
+.p-bullet-txt,
+.specs-main-paragraph,
+.matrix-k, .matrix-v,
+.nav-item, .lang-switch-pill, .btn-gold-action, .btn-outline-action, .btn-nav-gold,
+.badge-number-pill, .hero-tag-badge, .b-num, .b-text,
+.stat-desc, .check-item, .c-stat-pill, .btn-open-gmaps, .btn-whatsapp-quote,
+.unit-pill-btn, .roi-btn, .roi-title, .roi-sublabel, .res-label, .vip-lead-text, .vip-card-desc {
+  font-family: var(--font-main);
 }
 
 /* Custom Scrollbar */
