@@ -73,7 +73,7 @@
         <a href="#solidez" class="nav-item"><span class="nav-idx">03</span> <span data-i18n="nav.trust">Solidez</span></a>
         <a href="#masterplan" class="nav-item"><span class="nav-idx">04</span> <span data-i18n="nav.masterplan">Masterplan</span></a>
         <a href="#inversion" class="nav-item"><span class="nav-idx">05</span> <span data-i18n="nav.investment">Inversión</span></a>
-        <a href="#financiamiento" class="nav-item"><span class="nav-idx">06</span> <span data-i18n="nav.financing">Financiamiento</span></a>
+        <a href="#ubicacion" class="nav-item"><span class="nav-idx">06</span> <span data-i18n="nav.location">Ubicación</span></a>
         <a href="#contacto" class="nav-item"><span class="nav-idx">07</span> <span data-i18n="nav.contact">Contacto</span></a>
       </nav>
 
@@ -115,7 +115,7 @@
       <a href="#solidez" class="mobile-nav-item"><span class="m-idx">03</span> <span data-i18n="nav.trust">Solidez</span></a>
       <a href="#masterplan" class="mobile-nav-item"><span class="m-idx">04</span> <span data-i18n="nav.masterplan">Masterplan</span></a>
       <a href="#inversion" class="mobile-nav-item"><span class="m-idx">05</span> <span data-i18n="nav.investment">Inversión</span></a>
-      <a href="#financiamiento" class="mobile-nav-item"><span class="m-idx">06</span> <span data-i18n="nav.financing">Financiamiento</span></a>
+      <a href="#ubicacion" class="mobile-nav-item"><span class="m-idx">06</span> <span data-i18n="nav.location">Ubicación</span></a>
       <a href="#contacto" class="mobile-nav-item"><span class="m-idx">07</span> <span data-i18n="nav.contact">Contacto</span></a>
     </nav>
 
@@ -158,9 +158,9 @@
               <span data-i18n="hero.btn_masterplan">Explorar Masterplan</span>
               <i data-lucide="arrow-down"></i>
             </a>
-            <a href="#inversion" class="btn-outline-action">
-              <i data-lucide="calculator"></i>
-              <span data-i18n="hero.btn_calc">Calcular Inversión</span>
+            <a href="#contacto" class="btn-outline-action">
+              <i data-lucide="message-square"></i>
+              <span data-i18n="hero.btn_agent">Contactar Asesor</span>
             </a>
           </div>
 
@@ -203,10 +203,10 @@
             <div class="trust-divider"></div>
 
             <div class="trust-pill-item">
-              <i data-lucide="shield-check" class="trust-icon gold-accent"></i>
+              <i data-lucide="user-check" class="trust-icon gold-accent"></i>
               <div class="trust-text-group">
-                <span class="trust-title">Banco Occidente</span>
-                <span class="trust-sub" data-i18n="hero.trust_bank_sub">80% Financiable</span>
+                <span class="trust-title" data-i18n="hero.trust_agent_title">Atención VIP</span>
+                <span class="trust-sub" data-i18n="hero.trust_agent_sub">Asesoría Directa</span>
               </div>
             </div>
           </div>
@@ -345,10 +345,10 @@
 
           <!-- Pillar 3 -->
           <div class="stat-pillar-card reveal-item">
-            <span class="pillar-giant-label green-accent"><span class="odometer-num" data-target="80" data-suffix="%">80%</span></span>
+            <span class="pillar-giant-label green-accent" data-i18n="trust.c3_giant">VIP</span>
             <div class="pillar-line green"></div>
-            <h3 class="pillar-heading" data-i18n="trust.c3_title">Financiamiento Bancario</h3>
-            <p class="pillar-desc" data-i18n="trust.c3_desc">Respaldo de hasta 80% a través de Banco de Occidente y BAC Honduras.</p>
+            <h3 class="pillar-heading" data-i18n="trust.c3_title">Asesoría Integral</h3>
+            <p class="pillar-desc" data-i18n="trust.c3_desc">Acompañamiento personalizado directo con nuestro agente de ventas y gestión de compra.</p>
           </div>
 
           <!-- Pillar 4 -->
@@ -463,8 +463,8 @@
                 <span class="matrix-v gold-accent" id="panel-spec-price">$250 / v²</span>
               </div>
               <div class="matrix-cell">
-                <span class="matrix-k" data-i18n="mp.lbl_fin">FINANCIAMIENTO</span>
-                <span class="matrix-v" id="panel-spec-fin">Banco de Occidente (80%)</span>
+                <span class="matrix-k" data-i18n="mp.lbl_fin">COMPRA & ASESORÍA</span>
+                <span class="matrix-v" id="panel-spec-fin" data-i18n="mp.val_fin">Gestión Directa</span>
               </div>
             </div>
 
@@ -484,7 +484,7 @@
             </div>
 
             <a href="#inversion" class="btn-gold-action full-width">
-              <span data-i18n="mp.btn_quote">Cotizar en este Bloque</span>
+              <span data-i18n="mp.btn_quote">Cotizar con Asesor</span>
               <i data-lucide="arrow-right"></i>
             </a>
           </div>
@@ -515,13 +515,22 @@
 
         <div class="investment-deck-grid">
           
-          <!-- Left: Pricing Breakdown -->
+          <!-- Left: Pricing Breakdown & Unit Switcher -->
           <div class="pricing-feature-column reveal-item">
             <div>
-              <div class="price-mega-display">
-                <span class="cur">$</span>
-                <span class="amt" id="main-price-num">250</span>
-                <span class="unit" id="main-price-unit">/ v²</span>
+              <div class="calc-header-row">
+                <div class="price-mega-display">
+                  <span class="cur">$</span>
+                  <span class="amt" id="main-price-num">250</span>
+                  <span class="unit" id="main-price-unit">/ v²</span>
+                </div>
+                
+                <!-- Unit Selector Switcher (v2, m2, ft2) -->
+                <div class="unit-switch-pills">
+                  <button class="unit-pill-btn active" data-unit="vara">v²</button>
+                  <button class="unit-pill-btn" data-unit="m2">m²</button>
+                  <button class="unit-pill-btn" data-unit="sqft">ft²</button>
+                </div>
               </div>
 
               <div class="pricing-bullet-stack">
@@ -545,6 +554,13 @@
                     <strong>Topografía 100% regular y plana</strong> sin sobrecostos de nivelación.
                   </div>
                 </div>
+
+                <div class="p-bullet-item">
+                  <i data-lucide="check-circle-2" class="green-accent"></i>
+                  <div class="p-bullet-txt" data-i18n="inv.bullet4">
+                    <strong>Lotes desde 300 v² hasta 1,500+ v²</strong> listos para escrituración.
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -554,85 +570,42 @@
             </div>
           </div>
 
-          <!-- Right: Interactive Mortgage Simulator & ROI Projections -->
+          <!-- Right: Direct Sales Agent Contact Card -->
           <div class="calculator-interactive-deck reveal-item">
             <div class="calc-header-row">
-              <h3 class="calc-title"><i data-lucide="calculator" class="gold-accent"></i> <span data-i18n="inv.calc_title">Simulador Bancario</span></h3>
+              <h3 class="calc-title"><i data-lucide="user-check" class="gold-accent"></i> <span data-i18n="inv.consult_title">Atención & Asesoría Directa</span></h3>
+              <span class="badge-solid-green" data-i18n="inv.consult_status">Respuesta Inmediata</span>
+            </div>
+
+            <div class="agent-info-box">
+              <p class="agent-consult-desc" data-i18n="inv.consult_desc">
+                Comuníquese directamente con nuestro agente de ventas exclusivo para recibir el catálogo de lotes disponibles, opciones de pago y coordinar su visita guiada en Copán Ruinas.
+              </p>
               
-              <!-- Unit Selector Switcher (v2, m2, ft2) -->
-              <div class="unit-switch-pills">
-                <button class="unit-pill-btn active" data-unit="vara">v² (Varas)</button>
-                <button class="unit-pill-btn" data-unit="m2">m² (Metros)</button>
-                <button class="unit-pill-btn" data-unit="sqft">ft² (Sq Ft)</button>
-              </div>
-            </div>
-
-            <div class="calc-control-group">
-              <div class="calc-slider-header">
-                <label for="vara-slider" data-i18n="inv.lbl_area">Área del Lote:</label>
-                <span class="slider-big-readout gold-accent" id="vara-val-display">500 v²</span>
-              </div>
-              <input type="range" id="vara-slider" min="300" max="1500" step="25" value="500" class="custom-range-slider" />
-            </div>
-
-            <div class="calc-control-group">
-              <div class="calc-slider-header">
-                <label for="prima-slider" data-i18n="inv.lbl_downpayment">Prima Inicial (%):</label>
-                <span class="slider-big-readout green-accent" id="prima-pct-display">20% (Mínimo sugerido)</span>
-              </div>
-              <input type="range" id="prima-slider" min="20" max="50" step="5" value="20" class="custom-range-slider green" />
-            </div>
-
-            <div class="calc-results-deck">
-              <div class="result-block">
-                <span class="res-label" data-i18n="inv.res_total">VALOR TOTAL</span>
-                <span class="res-num-huge gold-accent" id="calc-total-usd">$125,000 USD</span>
-              </div>
-              <div class="result-block">
-                <span class="res-label" data-i18n="inv.res_prima">PRIMA</span>
-                <span class="res-num" id="calc-prima-usd">$25,000 USD</span>
-              </div>
-              <div class="result-block">
-                <span class="res-label" data-i18n="inv.res_cuota">CUOTA EST. (15 AÑOS)*</span>
-                <span class="res-num green-accent" id="calc-cuota-usd">~$955 USD/mes</span>
-              </div>
-            </div>
-
-            <!-- ROI Projected Equity Box (Integrated Inside Cotizador) -->
-            <div class="roi-projection-box">
-              <div class="roi-header">
-                <span class="roi-title"><i data-lucide="trending-up" class="gold-accent"></i> <span data-i18n="inv.roi_title">Plusvalía Proyectada (8.5% Anual)</span></span>
-                <div class="roi-years-selector">
-                  <button class="roi-btn" data-years="3">3A</button>
-                  <button class="roi-btn active" data-years="5">5A</button>
-                  <button class="roi-btn" data-years="10">10A</button>
+              <div class="agent-contact-highlights">
+                <div class="agent-stat-mini">
+                  <span class="stat-mini-label" data-i18n="inv.stat_area_label">ÁREAS DISPONIBLES</span>
+                  <strong class="stat-mini-val gold-accent">300 a 1,500+ v²</strong>
+                </div>
+                <div class="agent-stat-mini">
+                  <span class="stat-mini-label" data-i18n="inv.stat_delivery_label">ESCRITURACIÓN</span>
+                  <strong class="stat-mini-val green-accent" data-i18n="inv.stat_delivery_val">Inmediata</strong>
                 </div>
               </div>
-              <div class="roi-metrics-row">
-                <div>
-                  <span class="roi-sublabel" data-i18n="inv.roi_future_val">Valor Estimado:</span>
-                  <strong class="roi-future-num gold-accent" id="roi-projected-val">$187,958 USD</strong>
-                </div>
-                <div>
-                  <span class="roi-sublabel" data-i18n="inv.roi_gain">Ganancia Patrimonial:</span>
-                  <strong class="roi-gain-num green-accent" id="roi-gain-val">+$62,958 USD</strong>
-                </div>
-              </div>
-              <div class="roi-bar-track">
-                <div class="roi-bar-fill" id="roi-bar-progress" style="width: 65%;"></div>
-              </div>
             </div>
 
-            <!-- Instant WhatsApp Quote Button -->
-            <a href="https://wa.me/50493613976" id="whatsapp-quote-btn" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-quote">
-              <i data-lucide="message-circle"></i>
-              <span data-i18n="inv.btn_send_wa">Enviar Cotización a WhatsApp (+504 9361-3976)</span>
-            </a>
+            <div class="agent-cta-group">
+              <!-- Instant WhatsApp Quote Button -->
+              <a href="https://wa.me/50493613976?text=Hola,%20quisiera%20recibir%20informaci%C3%B3n%20y%20cotizaci%C3%B3n%20de%20lotes%20en%20Residencial%20Los%20Mangos" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-quote">
+                <i data-lucide="message-circle"></i>
+                <span data-i18n="inv.btn_send_wa">Chatear con Agente de Ventas (+504 9361-3976)</span>
+              </a>
 
-            <a href="#contacto" class="btn-gold-action full-width">
-              <span data-i18n="inv.btn_prequal">Solicitar Precalificación Bancaria</span>
-              <i data-lucide="chevron-right"></i>
-            </a>
+              <a href="#contacto" class="btn-gold-action full-width">
+                <span data-i18n="inv.btn_prequal">Agendar Visita Guiada / Reserva</span>
+                <i data-lucide="chevron-right"></i>
+              </a>
+            </div>
           </div>
 
         </div>
@@ -641,57 +614,58 @@
     </section>
 
     <!-- =====================================================
-         SECTION 6: FINANCIAMIENTO & UBICACIÓN
+         SECTION 6: UBICACIÓN & CONTACTO
          ===================================================== -->
-    <section id="financiamiento" class="vh-section">
+    <section id="ubicacion" class="vh-section">
       <div class="section-inner-flow wide-flow">
         
         <div class="section-header-compact reveal-item">
           <div class="badge-number-pill">
             <span class="b-num">06</span>
-            <span class="b-text" data-i18n="fin.badge">FINANCIAMIENTO & LOCALIZACIÓN</span>
+            <span class="b-text" data-i18n="fin.badge">UBICACIÓN & CONTACTO</span>
           </div>
           <h2 class="section-title-compact">
-            <span data-i18n="fin.title_part1">Respaldo con</span> <span class="gold-accent">Banco de Occidente</span> <span data-i18n="fin.title_part2">y</span> <span class="green-accent">BAC</span>.
+            <span data-i18n="fin.title_part1">Ubicación Estratégica &</span> <span class="gold-accent" data-i18n="fin.title_part2">Contacto Directo</span>.
           </h2>
           <p class="section-subtitle-compact" data-i18n="fin.subtitle">
-            Facilidades de crédito de hasta el 80% del valor a plazos de 10 a 15 años.
+            Situado a 175m de la carretera internacional en Copán Ruinas. Conecte de inmediato con nuestro agente de ventas o asesor para coordinar su compra.
           </p>
         </div>
 
         <div class="banking-location-grid">
           
-          <!-- Bank Card -->
+          <!-- Sales & Banking Advisory Contact Deck -->
           <div class="bank-feature-deck reveal-item">
             <div class="bank-deck-header">
-              <div class="bank-icon-box"><i data-lucide="landmark"></i></div>
+              <div class="bank-icon-box"><i data-lucide="headset"></i></div>
               <div>
-                <h3 class="bank-deck-name">Banco de Occidente</h3>
-                <span class="bank-deck-sub" data-i18n="fin.bank_sub">Financiamiento de Terrenos</span>
+                <h3 class="bank-deck-name" data-i18n="fin.contact_title">Canales de Atención</h3>
+                <span class="bank-deck-sub" data-i18n="fin.contact_sub">Residencial Los Mangos &bull; Copán Ruinas</span>
               </div>
             </div>
 
             <div class="bank-details-list">
               <div class="bank-detail-row">
-                <span data-i18n="fin.row1_lbl">Financiamiento:</span>
-                <strong data-i18n="fin.row1_val">Hasta 80%</strong>
+                <span data-i18n="fin.row1_lbl">Agente de Ventas:</span>
+                <strong class="gold-accent">+504 9361-3976</strong>
               </div>
               <div class="bank-detail-row">
-                <span data-i18n="fin.row2_lbl">Plazo:</span>
-                <strong data-i18n="fin.row2_val">10 a 15 años</strong>
+                <span data-i18n="fin.row2_lbl">Atención al Cliente:</span>
+                <strong data-i18n="fin.row2_val">Lunes a Sábado 8am - 6pm</strong>
               </div>
               <div class="bank-detail-row">
-                <span data-i18n="fin.row3_lbl">Prima mínima:</span>
-                <strong data-i18n="fin.row3_val">20% inicial</strong>
+                <span data-i18n="fin.row3_lbl">Asesoría Bancaria:</span>
+                <strong data-i18n="fin.row3_val">Gestión & Conexión Directa</strong>
               </div>
               <div class="bank-detail-row">
-                <span data-i18n="fin.row4_lbl">Cuentas de Reserva:</span>
-                <strong>Banco de Occidente & BAC</strong>
+                <span data-i18n="fin.row4_lbl">Ubicación:</span>
+                <strong>Copán Ruinas, Honduras</strong>
               </div>
             </div>
 
-            <a href="https://wa.me/50493613976?text=Hola,%20quisiera%20asesoria%20sobre%20el%20financiamiento%20bancario%20en%20Residencial%20Los%20Mangos" target="_blank" rel="noopener noreferrer" class="btn-gold-action full-width">
-              <span data-i18n="fin.btn_advisor">Contactar Asesor Bancario</span>
+            <a href="https://wa.me/50493613976?text=Hola,%20quisiera%20asesoria%20sobre%20los%20lotes%20en%20Residencial%20Los%20Mangos" target="_blank" rel="noopener noreferrer" class="btn-gold-action full-width">
+              <i data-lucide="message-circle"></i>
+              <span data-i18n="fin.btn_advisor">Hablar con Asesor de Ventas</span>
               <i data-lucide="arrow-up-right"></i>
             </a>
           </div>
@@ -827,7 +801,7 @@
           <div class="vip-footer-pills">
             <span class="vip-pill-badge" data-i18n="footer.b1">Topografía Regular</span>
             <span class="vip-pill-badge">$250/v²</span>
-            <span class="vip-pill-badge">Banco de Occidente</span>
+            <span class="vip-pill-badge" data-i18n="footer.b3">Asesoría Directa</span>
           </div>
         </div>
 
@@ -897,10 +871,10 @@
               <td>$250 USD / v²</td>
             </tr>
             <tr>
-              <td data-i18n="compare.row_fin">Financiamiento</td>
-              <td>Hasta 80% Banco Occidente</td>
-              <td class="active-col">Hasta 80% Banco Occidente</td>
-              <td>Banco Occidente & BAC</td>
+              <td data-i18n="compare.row_fin">Gestión de Compra</td>
+              <td>Agente de Ventas Directo</td>
+              <td class="active-col">Agente de Ventas Directo</td>
+              <td>Agente de Ventas Directo</td>
             </tr>
             <tr>
               <td></td>

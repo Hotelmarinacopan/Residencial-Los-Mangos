@@ -20,7 +20,7 @@
       "nav.trust": "Solidez",
       "nav.masterplan": "Masterplan",
       "nav.investment": "Inversión",
-      "nav.financing": "Financiamiento",
+      "nav.location": "Ubicación",
       "nav.contact": "Contacto",
       "nav.cta": "Reservar Lote",
       "hero.tag": "LANZAMIENTO EXCLUSIVO &bull; COPÁN RUINAS",
@@ -28,13 +28,14 @@
       "hero.title_line2": "Construyendo tu Legado.",
       "hero.description": "Un enclave residencial de ultra-lujo y alta plusvalía. Lotes con topografía 100% regular a <strong>175 metros de la carretera internacional</strong> y a solo <strong>4 cuadras del Parque Central</strong>.",
       "hero.btn_masterplan": "Explorar Masterplan",
-      "hero.btn_calc": "Calcular Inversión",
+      "hero.btn_agent": "Contactar Asesor",
       "hero.trust_lots": "Lotes Disponibles",
       "hero.trust_road_title": "175m Carretera",
       "hero.trust_road_sub": "Acceso Pavimentado",
       "hero.trust_park_title": "4 Cuadras",
       "hero.trust_park_sub": "Parque Central",
-      "hero.trust_bank_sub": "80% Financiable",
+      "hero.trust_agent_title": "Atención VIP",
+      "hero.trust_agent_sub": "Asesoría Directa",
       "hero.scroll_hint": "Haz scroll para avanzar en el recorrido",
       "concept.badge": "EL CONCEPTO",
       "concept.title_part1": "Innovando el Futuro.",
@@ -56,8 +57,9 @@
       "trust.c1_desc": "Lotes planos con trazado óptimo sin gastos imprevistos de nivelación.",
       "trust.c2_title": "100% Inscritos",
       "trust.c2_desc": "Propiedades libres de gravámenes con traspaso seguro e inmediato.",
-      "trust.c3_title": "Financiamiento Bancario",
-      "trust.c3_desc": "Respaldo de hasta 80% a través de Banco de Occidente y BAC Honduras.",
+      "trust.c3_giant": "VIP",
+      "trust.c3_title": "Asesoría Integral",
+      "trust.c3_desc": "Acompañamiento personalizado directo con nuestro agente de ventas y gestión de compra.",
       "trust.c4_title": "Seguridad & Control",
       "trust.c4_desc": "Administración profesional del complejo y vigilancia permanente 24/7.",
       "mp.badge": "PLANIFICACIÓN URBANA",
@@ -73,42 +75,38 @@
       "mp.lbl_use": "USO DE SUELO",
       "mp.lbl_topo": "TOPOGRAFÍA",
       "mp.lbl_price": "PRECIO POR VARA",
-      "mp.lbl_fin": "FINANCIAMIENTO",
-      "mp.btn_quote": "Cotizar en este Bloque",
+      "mp.lbl_fin": "COMPRA & ASESORÍA",
+      "mp.val_fin": "Gestión Directa",
+      "mp.btn_quote": "Cotizar con Asesor",
       "inv.badge": "MODELO DE INVERSIÓN",
       "inv.title_part1": "Lotes listos a",
       "inv.subtitle": "Los impuestos de traspaso son pagados al 100% por la Desarrolladora; el comprador solo abona escrituración notarial.",
       "inv.bullet1": "<strong>Impuestos cubiertos por la Desarrolladora</strong> (cero costos ocultos).",
       "inv.bullet2": "<strong>Comprador solo paga escrituración notarial</strong>.",
       "inv.bullet3": "<strong>Topografía 100% regular y plana</strong> sin sobrecostos de nivelación.",
-      "inv.roi_title": "Plusvalía Proyectada (8.5% Anual)",
-      "inv.roi_future_val": "Valor Estimado:",
-      "inv.roi_gain": "Ganancia Patrimonial:",
+      "inv.bullet4": "<strong>Lotes desde 300 v² hasta 1,500+ v²</strong> listos para escrituración.",
       "inv.legal": "Títulos de propiedad plenamente inscritos y libres de gravámenes.",
-      "inv.calc_title": "Simulador Bancario",
-      "inv.lbl_area": "Área del Lote:",
-      "inv.lbl_downpayment": "Prima Inicial (%):",
-      "inv.res_total": "VALOR TOTAL",
-      "inv.res_prima": "PRIMA",
-      "inv.res_cuota": "CUOTA EST. (15 AÑOS)*",
-      "inv.btn_send_wa": "Enviar Cotización a WhatsApp (+504 9361-3976)",
-      "inv.btn_prequal": "Solicitar Precalificación Bancaria",
-      "fin.badge": "FINANCIAMIENTO & LOCALIZACIÓN",
-      "fin.title_part1": "Respaldo con",
-      "fin.title_part2": "y",
-      "fin.subtitle": "Facilidades de crédito de hasta el 80% del valor a plazos de 10 a 15 años.",
-      "fin.bank_sub": "Financiamiento de Terrenos",
-      "fin.row1_lbl": "Financiamiento:",
-      "fin.row1_val": "Hasta 80%",
-      "fin.row2_lbl": "Plazo:",
-      "fin.row2_val": "10 a 15 años",
-      "fin.row3_lbl": "Prima mínima:",
-      "fin.row3_val": "20% inicial",
-      "fin.row4_lbl": "Cuentas de Reserva:",
-      "fin.btn_advisor": "Contactar Asesor Bancario",
-      "fin.map_highway": "Carretera Internacional (175m)",
-      "fin.map_access": "Acceso Los Mangos",
-      "fin.map_park": "Parque Central (4 Cuadras)",
+      "inv.consult_title": "Atención & Asesoría Directa",
+      "inv.consult_status": "Respuesta Inmediata",
+      "inv.consult_desc": "Comuníquese directamente con nuestro agente de ventas exclusivo para recibir el catálogo de lotes disponibles, opciones de pago y coordinar su visita guiada en Copán Ruinas.",
+      "inv.stat_area_label": "ÁREAS DISPONIBLES",
+      "inv.stat_delivery_label": "ESCRITURACIÓN",
+      "inv.stat_delivery_val": "Inmediata",
+      "inv.btn_send_wa": "Chatear con Agente de Ventas (+504 9361-3976)",
+      "inv.btn_prequal": "Agendar Visita Guiada / Reserva",
+      "fin.badge": "UBICACIÓN & CONTACTO",
+      "fin.title_part1": "Ubicación Estratégica &",
+      "fin.title_part2": "Contacto Directo",
+      "fin.subtitle": "Situado a 175m de la carretera internacional en Copán Ruinas. Conecte de inmediato con nuestro agente de ventas o asesor para coordinar su compra.",
+      "fin.contact_title": "Canales de Atención",
+      "fin.contact_sub": "Residencial Los Mangos &bull; Copán Ruinas",
+      "fin.row1_lbl": "Agente de Ventas:",
+      "fin.row2_lbl": "Atención al Cliente:",
+      "fin.row2_val": "Lunes a Sábado 8am - 6pm",
+      "fin.row3_lbl": "Asesoría Bancaria:",
+      "fin.row3_val": "Gestión & Conexión Directa",
+      "fin.row4_lbl": "Ubicación:",
+      "fin.btn_advisor": "Hablar con Asesor de Ventas",
       "fin.leg_highway": "A 175m de Carretera Internacional",
       "fin.leg_park": "A 4 cuadras del Parque Central",
       "fin.btn_gmaps": "Abrir en Google Maps",
@@ -130,6 +128,7 @@
       "contact.form_submit": "Enviar Solicitud Inmediata",
       "contact.privacy": "Su información se maneja con estricta confidencialidad.",
       "footer.b1": "Topografía Regular",
+      "footer.b3": "Asesoría Directa",
       "compare.title": "Comparativa Integral de Bloques",
       "compare.sub": "Analice las características exclusivas de cada zona de Residencial Los Mangos",
       "compare.col_feature": "Característica",
@@ -139,7 +138,7 @@
       "compare.row_privacy": "Nivel de Privacidad",
       "compare.row_topo": "Topografía",
       "compare.row_price": "Precio Base",
-      "compare.row_fin": "Financiamiento",
+      "compare.row_fin": "Gestión de Compra",
       "compare.select_a": "Seleccionar A",
       "compare.select_b": "Seleccionar B",
       "compare.select_c": "Seleccionar C"
@@ -152,7 +151,7 @@
       "nav.trust": "Trust",
       "nav.masterplan": "Masterplan",
       "nav.investment": "Investment",
-      "nav.financing": "Financing",
+      "nav.location": "Location",
       "nav.contact": "Contact",
       "nav.cta": "Reserve Lot",
       "hero.tag": "EXCLUSIVE LAUNCH &bull; COPÁN RUINAS",
@@ -160,13 +159,14 @@
       "hero.title_line2": "Building Your Legacy.",
       "hero.description": "An ultra-luxury, high-equity residential development. 100% flat topography lots <strong>175 meters from the international highway</strong> and just <strong>4 blocks from Central Park</strong>.",
       "hero.btn_masterplan": "Explore Masterplan",
-      "hero.btn_calc": "Calculate Investment",
+      "hero.btn_agent": "Contact Sales Agent",
       "hero.trust_lots": "Available Lots",
       "hero.trust_road_title": "175m Highway",
       "hero.trust_road_sub": "Paved Access",
       "hero.trust_park_title": "4 Blocks",
       "hero.trust_park_sub": "Central Park",
-      "hero.trust_bank_sub": "80% Financing",
+      "hero.trust_agent_title": "VIP Service",
+      "hero.trust_agent_sub": "Direct Advisory",
       "hero.scroll_hint": "Scroll down to explore the tour",
       "concept.badge": "THE CONCEPT",
       "concept.title_part1": "Innovating the Future.",
@@ -188,8 +188,9 @@
       "trust.c1_desc": "Flat lots with optimal layout avoiding unforeseen leveling expenses.",
       "trust.c2_title": "100% Registered Titles",
       "trust.c2_desc": "Properties free of all liens with safe and immediate deed transfer.",
-      "trust.c3_title": "Bank Financing",
-      "trust.c3_desc": "Up to 80% financing backed by Banco de Occidente and BAC Honduras.",
+      "trust.c3_giant": "VIP",
+      "trust.c3_title": "Comprehensive Advisory",
+      "trust.c3_desc": "Direct personalized assistance with our sales agent and acquisition process.",
       "trust.c4_title": "Security & Control",
       "trust.c4_desc": "Professional gated community management and round-the-clock surveillance.",
       "mp.badge": "URBAN PLANNING",
@@ -205,42 +206,38 @@
       "mp.lbl_use": "LAND USE",
       "mp.lbl_topo": "TOPOGRAPHY",
       "mp.lbl_price": "PRICE PER VARA",
-      "mp.lbl_fin": "FINANCING",
-      "mp.btn_quote": "Get Quote for this Block",
+      "mp.lbl_fin": "PURCHASE & ADVISORY",
+      "mp.val_fin": "Direct Advisory",
+      "mp.btn_quote": "Get Quote with Advisor",
       "inv.badge": "INVESTMENT MODEL",
       "inv.title_part1": "Lots ready at",
       "inv.subtitle": "Transfer taxes are 100% paid by the Developer; the buyer only covers notary closing fees.",
       "inv.bullet1": "<strong>Taxes covered by Developer</strong> (zero hidden costs).",
       "inv.bullet2": "<strong>Buyer only pays notary deed registration</strong>.",
       "inv.bullet3": "<strong>100% regular & flat topography</strong> with no ground-leveling costs.",
-      "inv.roi_title": "Projected Equity (8.5% Annual)",
-      "inv.roi_future_val": "Estimated Value:",
-      "inv.roi_gain": "Capital Gain:",
+      "inv.bullet4": "<strong>Lots from 300 v² to 1,500+ v²</strong> ready for deed transfer.",
       "inv.legal": "Property titles fully registered and free of all liens.",
-      "inv.calc_title": "Mortgage Simulator",
-      "inv.lbl_area": "Lot Area:",
-      "inv.lbl_downpayment": "Down Payment (%):",
-      "inv.res_total": "TOTAL VALUE",
-      "inv.res_prima": "DOWN PAYMENT",
-      "inv.res_cuota": "EST. MONTHLY (15 YRS)*",
-      "inv.btn_send_wa": "Send Quote to WhatsApp (+504 9361-3976)",
-      "inv.btn_prequal": "Request Bank Pre-approval",
-      "fin.badge": "FINANCING & LOCATION",
-      "fin.title_part1": "Backed by",
-      "fin.title_part2": "and",
-      "fin.subtitle": "Credit facilities up to 80% value with 10 to 15-year repayment terms.",
-      "fin.bank_sub": "Land Financing Program",
-      "fin.row1_lbl": "Financing:",
-      "fin.row1_val": "Up to 80%",
-      "fin.row2_lbl": "Term:",
-      "fin.row2_val": "10 to 15 years",
-      "fin.row3_lbl": "Min. Down Payment:",
-      "fin.row3_val": "20% initial",
-      "fin.row4_lbl": "Escrow Accounts:",
-      "fin.btn_advisor": "Contact Mortgage Advisor",
-      "fin.map_highway": "International Highway (175m)",
-      "fin.map_access": "Los Mangos Entrance",
-      "fin.map_park": "Central Park (4 Blocks)",
+      "inv.consult_title": "Direct Advisory & Sales",
+      "inv.consult_status": "Instant Response",
+      "inv.consult_desc": "Contact our exclusive sales agent directly to receive the catalog of available lots, purchase options, and schedule your guided tour in Copán Ruinas.",
+      "inv.stat_area_label": "AVAILABLE AREAS",
+      "inv.stat_delivery_label": "DEED TRANSFER",
+      "inv.stat_delivery_val": "Immediate",
+      "inv.btn_send_wa": "Chat with Sales Agent (+504 9361-3976)",
+      "inv.btn_prequal": "Schedule Guided Tour / Reservation",
+      "fin.badge": "LOCATION & CONTACT",
+      "fin.title_part1": "Strategic Location &",
+      "fin.title_part2": "Direct Contact",
+      "fin.subtitle": "Located 175m from the international highway in Copán Ruinas. Connect directly with our sales agent to coordinate your purchase.",
+      "fin.contact_title": "Contact Channels",
+      "fin.contact_sub": "Residencial Los Mangos &bull; Copán Ruinas",
+      "fin.row1_lbl": "Sales Agent:",
+      "fin.row2_lbl": "Customer Support:",
+      "fin.row2_val": "Monday to Saturday 8am - 6pm",
+      "fin.row3_lbl": "Banking Advisory:",
+      "fin.row3_val": "Direct Banking Connection",
+      "fin.row4_lbl": "Location:",
+      "fin.btn_advisor": "Talk to Sales Advisor",
       "fin.leg_highway": "175m from International Highway",
       "fin.leg_park": "4 blocks from Central Park",
       "fin.btn_gmaps": "Open in Google Maps",
@@ -262,6 +259,7 @@
       "contact.form_submit": "Submit Immediate Request",
       "contact.privacy": "Your information is handled with strict confidentiality.",
       "footer.b1": "Regular Topography",
+      "footer.b3": "Direct Advisory",
       "compare.title": "Comprehensive Block Comparison",
       "compare.sub": "Analyze the distinct luxury features of each sector in Residencial Los Mangos",
       "compare.col_feature": "Feature",
@@ -271,7 +269,7 @@
       "compare.row_privacy": "Privacy Level",
       "compare.row_topo": "Topography",
       "compare.row_price": "Base Price",
-      "compare.row_fin": "Financing",
+      "compare.row_fin": "Purchase Advisory",
       "compare.select_a": "Select A",
       "compare.select_b": "Select B",
       "compare.select_c": "Select C"
@@ -682,7 +680,7 @@
         use: '100% Residencial',
         topo: 'Regular / Suave Elevación',
         price: '$250 / v²',
-        fin: 'Banco de Occidente (80%)',
+        fin: 'Gestión Directa con Asesor',
         features: [
           'Vistas panorámicas hacia el atardecer y montañas',
           'Muro perimetral y seguridad redundante 24/7',
@@ -697,7 +695,7 @@
         use: '100% Residencial',
         topo: 'Regular / Plana',
         price: '$250 / v²',
-        fin: 'Banco de Occidente (80%)',
+        fin: 'Gestión Directa con Asesor',
         features: [
           'Normativa estricta que prohíbe comercios ruidosos',
           'Conexión subterránea de agua y energía eléctrica',
@@ -712,7 +710,7 @@
         use: 'Residencial / Comercial Selecto',
         topo: 'Regular / Plana',
         price: '$250 / v²',
-        fin: 'Banco de Occidente & BAC',
+        fin: 'Gestión Directa con Asesor',
         features: [
           'Permiso para comercio selecto de bajo impacto',
           'Fácil acceso y estacionamiento para visitas',
@@ -729,7 +727,7 @@
         use: '100% Residential',
         topo: 'Regular / Gentle Elevation',
         price: '$250 / v²',
-        fin: 'Banco de Occidente (80%)',
+        fin: 'Direct Sales Advisor',
         features: [
           'Panoramic views towards sunsets and mountain ridges',
           'Gated perimeter wall and 24/7 security',
@@ -744,7 +742,7 @@
         use: '100% Residential',
         topo: 'Regular / Flat',
         price: '$250 / v²',
-        fin: 'Banco de Occidente (80%)',
+        fin: 'Direct Sales Advisor',
         features: [
           'Strict zoning bylaws prohibiting noisy commercial activities',
           'Underground water and electrical power connections',
@@ -759,7 +757,7 @@
         use: 'Residential / Select Commercial',
         topo: 'Regular / Flat',
         price: '$250 / v²',
-        fin: 'Banco de Occidente & BAC',
+        fin: 'Direct Sales Advisor',
         features: [
           'Permit for low-impact select boutique commerce',
           'Easy access and dedicated visitor parking spaces',
@@ -887,135 +885,46 @@
   });
 
   /* =========================================================
-     4. UNIT CONVERTER (v² ↔ m² ↔ sq ft), CALCULATOR & ROI
+     4. UNIT CONVERTER (v² ↔ m² ↔ sq ft) & DIRECT AGENT QUOTE
      ========================================================= */
   let activeUnit = 'vara'; // 'vara' | 'm2' | 'sqft'
-  let activeRoiYears = 5;
 
   const VARA_TO_M2 = 0.6987;
   const VARA_TO_SQFT = 7.5208;
   const PRICE_PER_VARA = 250;
-  const ANNUAL_RATE = 0.095;
-  const LOAN_YEARS = 15;
-  const ANNUAL_APPRECIATION = 0.085; // 8.5% annual capital appreciation
-
-  const varaSlider = document.getElementById('vara-slider');
-  const varaValDisplay = document.getElementById('vara-val-display');
-  const primaSlider = document.getElementById('prima-slider');
-  const primaPctDisplay = document.getElementById('prima-pct-display');
-
-  const calcTotalUsd = document.getElementById('calc-total-usd');
-  const calcPrimaUsd = document.getElementById('calc-prima-usd');
-  const calcCuotaUsd = document.getElementById('calc-cuota-usd');
 
   const mainPriceNum = document.getElementById('main-price-num');
   const mainPriceUnit = document.getElementById('main-price-unit');
   const pricingTagUnit = document.getElementById('pricing-tag-unit');
-
-  const roiProjectedVal = document.getElementById('roi-projected-val');
-  const roiGainVal = document.getElementById('roi-gain-val');
-  const roiBarProgress = document.getElementById('roi-bar-progress');
-  const roiBtns = document.querySelectorAll('.roi-btn');
   const unitPills = document.querySelectorAll('.unit-pill-btn');
   const whatsappQuoteBtn = document.getElementById('whatsapp-quote-btn');
 
-  function formatCurrency(amount) {
-    return '$' + Math.round(amount).toLocaleString('en-US') + ' USD';
-  }
-
-  function calculateInvestment() {
-    if (!varaSlider || !primaSlider) return;
-
-    const varas = parseFloat(varaSlider.value) || 500;
-    const primaPct = parseFloat(primaSlider.value) || 20;
-
-    const total = varas * PRICE_PER_VARA;
-    const prima = total * (primaPct / 100);
-    const montoFinanciar = total - prima;
-
-    const monthlyRate = ANNUAL_RATE / 12;
-    const totalMonths = LOAN_YEARS * 12;
-    let cuotaMensual = 0;
-
-    if (montoFinanciar > 0) {
-      cuotaMensual =
-        (montoFinanciar * (monthlyRate * Math.pow(1 + monthlyRate, totalMonths))) /
-        (Math.pow(1 + monthlyRate, totalMonths) - 1);
-    }
-
-    // Unit Display Formatting
-    if (varaValDisplay) {
-      if (activeUnit === 'm2') {
-        const m2Val = Math.round(varas * VARA_TO_M2);
-        varaValDisplay.textContent = `${m2Val.toLocaleString()} m² (${varas.toLocaleString()} v²)`;
-      } else if (activeUnit === 'sqft') {
-        const sqftVal = Math.round(varas * VARA_TO_SQFT);
-        varaValDisplay.textContent = `${sqftVal.toLocaleString()} ft² (${varas.toLocaleString()} v²)`;
-      } else {
-        varaValDisplay.textContent = `${varas.toLocaleString()} v²`;
-      }
-    }
-
-    // Price tags based on unit
+  function updatePricingUnitDisplay() {
     if (mainPriceNum && mainPriceUnit) {
       if (activeUnit === 'm2') {
         const priceM2 = Math.round(PRICE_PER_VARA / VARA_TO_M2);
         mainPriceNum.textContent = priceM2;
         mainPriceUnit.textContent = '/ m²';
-        if (pricingTagUnit) pricingTagUnit.textContent = `$${priceM2} por Metro Cuadrado`;
+        if (pricingTagUnit) pricingTagUnit.textContent = currentLang === 'en' ? `$${priceM2} per Square Meter` : `$${priceM2} por Metro Cuadrado`;
       } else if (activeUnit === 'sqft') {
         const priceSqft = (PRICE_PER_VARA / VARA_TO_SQFT).toFixed(1);
         mainPriceNum.textContent = priceSqft;
         mainPriceUnit.textContent = '/ ft²';
-        if (pricingTagUnit) pricingTagUnit.textContent = `$${priceSqft} por Pie Cuadrado`;
+        if (pricingTagUnit) pricingTagUnit.textContent = currentLang === 'en' ? `$${priceSqft} per Square Foot` : `$${priceSqft} por Pie Cuadrado`;
       } else {
         mainPriceNum.textContent = '250';
         mainPriceUnit.textContent = '/ v²';
         if (pricingTagUnit) pricingTagUnit.textContent = currentLang === 'en' ? '$250 per Square Vara' : '$250 por Vara Cuadrada';
       }
     }
-
-    if (primaPctDisplay) {
-      if (currentLang === 'en') {
-        primaPctDisplay.textContent = `${primaPct}% (${primaPct === 20 ? 'Suggested min.' : 'Custom downpayment'})`;
-      } else {
-        primaPctDisplay.textContent = `${primaPct}% (${primaPct === 20 ? 'Mínimo sugerido' : 'Prima personalizada'})`;
-      }
-    }
-
-    if (calcTotalUsd) calcTotalUsd.textContent = formatCurrency(total);
-    if (calcPrimaUsd) calcPrimaUsd.textContent = formatCurrency(prima);
-    if (calcCuotaUsd) {
-      const suffix = currentLang === 'en' ? '/mo' : '/mes';
-      calcCuotaUsd.textContent = `~${formatCurrency(cuotaMensual)}${suffix}`;
-    }
-
-    // Calculate ROI
-    calculateRoi(total);
-
-    // Update WhatsApp link
-    updateWhatsAppQuoteLink(varas, total, prima, cuotaMensual);
   }
 
-  function calculateRoi(totalValue) {
-    const futureVal = totalValue * Math.pow(1 + ANNUAL_APPRECIATION, activeRoiYears);
-    const gain = futureVal - totalValue;
-
-    if (roiProjectedVal) roiProjectedVal.textContent = formatCurrency(futureVal);
-    if (roiGainVal) roiGainVal.textContent = `+${formatCurrency(gain)}`;
-
-    if (roiBarProgress) {
-      const pct = activeRoiYears === 3 ? 45 : activeRoiYears === 5 ? 68 : 100;
-      roiBarProgress.style.width = `${pct}%`;
-    }
-  }
-
-  function updateWhatsAppQuoteLink(varas = 500, total = 125000, prima = 25000, cuota = 955) {
+  function updateWhatsAppQuoteLink() {
     if (!whatsappQuoteBtn) return;
     const phone = '50493613976';
     const msg = currentLang === 'en'
-      ? `Hello Residencial Los Mangos! I would like to get a quote for a ${varas.toLocaleString()} v² lot in Block ${activeBlock}. Estimated Total Value: ${formatCurrency(total)} (Down payment: ${formatCurrency(prima)}, Monthly quote: ~${formatCurrency(cuota)}/mo). Please contact me with more information.`
-      : `¡Hola Residencial Los Mangos! Me interesa cotizar un lote de ${varas.toLocaleString()} v² en el Bloque ${activeBlock}. Valor total estimado: ${formatCurrency(total)} (Prima: ${formatCurrency(prima)}, Cuota mensual: ~${formatCurrency(cuota)}/mes). Deseo más información.`;
+      ? `Hello Residencial Los Mangos! I would like to get information and a quote for available lots in Block ${activeBlock}. Please contact me with more details.`
+      : `¡Hola Residencial Los Mangos! Me interesa recibir información y cotizar lotes disponibles en el Bloque ${activeBlock}. Deseo coordinar una visita.`;
 
     whatsappQuoteBtn.href = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
   }
@@ -1026,24 +935,9 @@
       unitPills.forEach((p) => p.classList.remove('active'));
       pill.classList.add('active');
       activeUnit = pill.dataset.unit;
-      calculateInvestment();
+      updatePricingUnitDisplay();
     });
   });
-
-  // ROI Year Selector Listeners
-  roiBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      roiBtns.forEach((b) => b.classList.remove('active'));
-      btn.classList.add('active');
-      activeRoiYears = parseInt(btn.dataset.years, 10) || 5;
-      calculateInvestment();
-    });
-  });
-
-  if (varaSlider && primaSlider) {
-    varaSlider.addEventListener('input', calculateInvestment);
-    primaSlider.addEventListener('input', calculateInvestment);
-  }
 
   /* =========================================================
      4.5 MOBILE HAMBURGER MENU DRAWER INTERACTION
