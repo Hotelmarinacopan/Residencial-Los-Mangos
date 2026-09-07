@@ -321,7 +321,8 @@
     const currentBlockKey = activeTab ? activeTab.dataset.target : 'B';
     setMasterplanBlock(currentBlockKey);
 
-    calculateInvestment();
+    updatePricingUnitDisplay();
+    updateWhatsAppQuoteLink();
 
     if (window.lucide) lucide.createIcons();
   }
