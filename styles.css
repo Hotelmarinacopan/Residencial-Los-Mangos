@@ -61,6 +61,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
   background-color: var(--bg-deep);
   color: var(--text-main);
   font-family: var(--font-main);
@@ -603,12 +604,15 @@ p, span, a, button, input, label, select, textarea,
   height: 100vh;
   min-height: 100vh;
   max-height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5.5rem 3rem 2rem;
+  padding: clamp(3.8rem, 6.5vh, 5.5rem) clamp(1rem, 3vw, 3rem) clamp(1rem, 2.5vh, 2rem);
   position: relative;
+  box-sizing: border-box;
 }
 
 .section-inner-flow {
@@ -618,7 +622,7 @@ p, span, a, button, input, label, select, textarea,
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.6rem;
+  gap: clamp(0.8rem, 1.8vh, 1.6rem);
   position: relative;
   z-index: 2;
 }
@@ -2637,6 +2641,8 @@ p, span, a, button, input, label, select, textarea,
     height: 100dvh;
     min-height: 100dvh;
     max-height: 100dvh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
     overflow: hidden;
     display: flex;
     align-items: center;
