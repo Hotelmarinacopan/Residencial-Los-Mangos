@@ -78,6 +78,8 @@
       "mp.lbl_fin": "COMPRA & ASESORÍA",
       "mp.val_fin": "Gestión Directa",
       "mp.btn_quote": "Cotizar con Asesor",
+      "mp.mode_blueprint": "Plano Oficial",
+      "mp.mode_drone": "Vista Drone",
       "inv.badge": "MODELO DE INVERSIÓN",
       "inv.title_part1": "Lotes listos a",
       "inv.subtitle": "Los impuestos de traspaso son pagados al 100% por la Desarrolladora; el comprador solo abona escrituración notarial.",
@@ -209,6 +211,8 @@
       "mp.lbl_fin": "PURCHASE & ADVISORY",
       "mp.val_fin": "Direct Advisory",
       "mp.btn_quote": "Get Quote with Advisor",
+      "mp.mode_blueprint": "Official Blueprint",
+      "mp.mode_drone": "Drone View",
       "inv.badge": "INVESTMENT MODEL",
       "inv.title_part1": "Lots ready at",
       "inv.subtitle": "Transfer taxes are 100% paid by the Developer; the buyer only covers notary closing fees.",
@@ -884,6 +888,29 @@
     });
   });
 
+  // Masterplan View Mode Switcher (Blueprint vs Drone)
+  const btnModeBlueprint = document.getElementById('btn-mode-blueprint');
+  const btnModeDrone = document.getElementById('btn-mode-drone');
+  const mpBlueprintImg = document.getElementById('mp-blueprint-img');
+  const mpDroneImg = document.getElementById('mp-drone-img');
+
+  function setMasterplanViewMode(mode) {
+    if (mode === 'drone') {
+      if (btnModeDrone) btnModeDrone.classList.add('active');
+      if (btnModeBlueprint) btnModeBlueprint.classList.remove('active');
+      if (mpDroneImg) mpDroneImg.classList.add('active-view');
+      if (mpBlueprintImg) mpBlueprintImg.classList.remove('active-view');
+    } else {
+      if (btnModeBlueprint) btnModeBlueprint.classList.add('active');
+      if (btnModeDrone) btnModeDrone.classList.remove('active');
+      if (mpBlueprintImg) mpBlueprintImg.classList.add('active-view');
+      if (mpDroneImg) mpDroneImg.classList.remove('active-view');
+    }
+  }
+
+  if (btnModeBlueprint) btnModeBlueprint.addEventListener('click', () => setMasterplanViewMode('blueprint'));
+  if (btnModeDrone) btnModeDrone.addEventListener('click', () => setMasterplanViewMode('drone'));
+
   /* =========================================================
      4. UNIT CONVERTER (v² ↔ m² ↔ sq ft) & DIRECT AGENT QUOTE
      ========================================================= */
@@ -981,9 +1008,16 @@
     resizeCanvas();
     initFrameLoading();
     onScroll();
-    calculateInvestment();
+    updatePricingUnitDisplay();
+    updateWhatsAppQuoteLink();
     initScrollReveal();
     requestAnimationFrame(animate);
+
+    // Failsafe preloader dismissal
+    setTimeout(() => {
+      const p = document.getElementById('preloader');
+      if (p) p.classList.add('is-loaded');
+    }, 1200);
   }
 
   if (document.readyState === 'loading') {

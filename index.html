@@ -382,31 +382,48 @@
 
         <div class="masterplan-command-grid">
           
-          <!-- Left: Drone Visualizer -->
+          <!-- Left: Masterplan Interactive Visualizer (Dual: Plano Oficial SVG & Vista Drone) -->
           <div class="masterplan-viewport-container reveal-item">
-            <div class="aerial-screen">
-              <img src="assets/frames/frame_0001.webp" alt="Masterplan Aéreo" class="aerial-img" />
+            <div class="aerial-screen" id="masterplan-screen-box">
+              
+              <!-- Layer 1: Architectural Blueprint Vector Plan (Default Active) -->
+              <img src="assets/masterplan-dark.svg" alt="Plano Oficial Residencial Los Mangos" class="masterplan-blueprint-img active-view" id="mp-blueprint-img" />
+              
+              <!-- Layer 2: Real Aerial Drone View -->
+              <img src="assets/frames/frame_0001.webp" alt="Masterplan Aéreo" class="aerial-img" id="mp-drone-img" />
               <div class="aerial-dark-scrim"></div>
 
+              <!-- Interactive Clickable Hotspots & Overlays -->
               <svg class="aerial-svg-overlay" viewBox="0 0 1000 650" preserveAspectRatio="xMidYMid slice">
-                <polygon id="poly-block-a" class="mp-poly" points="120,180 380,140 420,310 180,360" data-block="A"></polygon>
-                <polygon id="poly-block-b" class="mp-poly active-poly" points="430,160 720,200 680,410 390,340" data-block="B"></polygon>
-                <polygon id="poly-block-c" class="mp-poly" points="690,260 920,290 880,520 630,460" data-block="C"></polygon>
+                <polygon id="poly-block-a" class="mp-poly" points="200,120 520,100 580,240 240,260" data-block="A"></polygon>
+                <polygon id="poly-block-b" class="mp-poly active-poly" points="300,270 780,250 740,440 280,420" data-block="B"></polygon>
+                <polygon id="poly-block-c" class="mp-poly" points="320,440 850,420 820,580 340,590" data-block="C"></polygon>
               </svg>
 
-              <div class="map-pin pin-a" data-block="A" style="top: 36%; left: 28%;">
+              <!-- Interactive Pins for Blocks A, B, C -->
+              <div class="map-pin pin-a" data-block="A" style="top: 25%; left: 38%;">
                 <div class="pin-pulse-halo"></div>
                 <div class="pin-disc">A</div>
               </div>
 
-              <div class="map-pin pin-b active-pin" data-block="B" style="top: 45%; left: 54%;">
+              <div class="map-pin pin-b active-pin" data-block="B" style="top: 48%; left: 52%;">
                 <div class="pin-pulse-halo green"></div>
                 <div class="pin-disc green">B</div>
               </div>
 
-              <div class="map-pin pin-c" data-block="C" style="top: 58%; left: 78%;">
+              <div class="map-pin pin-c" data-block="C" style="top: 73%; left: 62%;">
                 <div class="pin-pulse-halo"></div>
                 <div class="pin-disc">C</div>
+              </div>
+
+              <!-- View Mode Toggle Pills: Plano Oficial vs Drone -->
+              <div class="mp-view-mode-pill">
+                <button type="button" class="mp-mode-btn active" id="btn-mode-blueprint" data-i18n="mp.mode_blueprint">
+                  <i data-lucide="map"></i> <span>Plano Oficial</span>
+                </button>
+                <button type="button" class="mp-mode-btn" id="btn-mode-drone" data-i18n="mp.mode_drone">
+                  <i data-lucide="camera"></i> <span>Vista Drone</span>
+                </button>
               </div>
 
               <div class="map-status-floating">
