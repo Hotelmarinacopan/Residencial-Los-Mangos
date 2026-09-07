@@ -129,6 +129,8 @@
       "contact.opt_block_c": "Bloque C — Comercial / Mixto",
       "contact.form_submit": "Enviar Solicitud Inmediata",
       "contact.privacy": "Su información se maneja con estricta confidencialidad.",
+      "footer.desc": "Desarrollo residencial & comercial exclusivo en Copán Ruinas, Honduras. Un enclave seguro con el respaldo y solidez de Grupo Hotel Marina Copán.",
+      "footer.rights": "Todos los derechos reservados.",
       "footer.b1": "Topografía Regular",
       "footer.b3": "Asesoría Directa",
       "compare.title": "Comparativa Integral de Bloques",
@@ -262,6 +264,8 @@
       "contact.opt_block_c": "Block C — Commercial / Mixed-Use",
       "contact.form_submit": "Submit Immediate Request",
       "contact.privacy": "Your information is handled with strict confidentiality.",
+      "footer.desc": "Exclusive residential & commercial development in Copán Ruinas, Honduras. A secure haven with the backing and prestige of Grupo Hotel Marina Copán.",
+      "footer.rights": "All rights reserved.",
       "footer.b1": "Regular Topography",
       "footer.b3": "Direct Advisory",
       "compare.title": "Comprehensive Block Comparison",
@@ -331,6 +335,106 @@
   if (langToggleBtn) {
     langToggleBtn.addEventListener('click', () => {
       setLanguage(currentLang === 'es' ? 'en' : 'es');
+    });
+  }
+
+  /* =========================================================
+     0.5 THEME SYSTEM (AUTO BROWSER / OS DETECTION & MANUAL TOGGLE)
+     ========================================================= */
+  let currentTheme = 'dark';
+
+  function detectInitialTheme() {
+    const saved = localStorage.getItem('los_mangos_theme');
+    if (saved && (saved === 'dark' || saved === 'light')) {
+      return saved;
+    }
+    // Auto-detect based on OS / Browser prefers-color-scheme
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+      return 'light';
+    }
+    return 'dark';
+  }
+
+  function applyTheme(theme, save = true) {
+    currentTheme = theme;
+    document.documentElement.setAttribute('data-theme', theme);
+    if (save) {
+      localStorage.setItem('los_mangos_theme', theme);
+    }
+
+    const themeToggleBtn = document.getElementById('theme-toggle-btn');
+    const mobileThemeToggleBtn = document.getElementById('mobile-theme-toggle-btn');
+    const mobileThemeLabel = document.getElementById('mobile-theme-label');
+
+    const isLight = theme === 'light';
+    const nextThemeTitle = isLight
+      ? (currentLang === 'en' ? 'Switch to Dark Mode' : 'Cambiar a Modo Oscuro')
+      : (currentLang === 'en' ? 'Switch to Light Mode' : 'Cambiar a Modo Claro');
+
+    if (themeToggleBtn) {
+      themeToggleBtn.setAttribute('title', nextThemeTitle);
+      themeToggleBtn.setAttribute('aria-label', nextThemeTitle);
+    }
+
+    if (mobileThemeLabel) {
+      mobileThemeLabel.textContent = isLight
+        ? (currentLang === 'en' ? 'Dark Mode' : 'Modo Oscuro')
+        : (currentLang === 'en' ? 'Light Mode' : 'Modo Claro');
+    }
+
+    if (mobileThemeToggleBtn) {
+      mobileThemeToggleBtn.setAttribute('title', nextThemeTitle);
+    }
+
+    if (window.lucide) lucide.createIcons();
+  }
+
+  function toggleTheme() {
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    applyTheme(newTheme, true);
+  }
+
+  const themeToggleBtn = document.getElementById('theme-toggle-btn');
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', toggleTheme);
+  }
+
+  const mobileThemeToggleBtn = document.getElementById('mobile-theme-toggle-btn');
+  if (mobileThemeToggleBtn) {
+    mobileThemeToggleBtn.addEventListener('click', toggleTheme);
+  }
+
+  // OS / Browser Color Scheme Change Listener (Auto-reactive if no explicit localStorage override)
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      if (!localStorage.getItem('los_mangos_theme')) {
+        applyTheme(e.matches ? 'dark' : 'light', false);
+      }
+    });
+  }
+
+  /* =========================================================
+     0.6 BRAND LOGO SMOOTH SCROLL TO HERO (REPLACES NAV INICIO)
+     ========================================================= */
+  const navBrandLogo = document.getElementById('nav-brand-logo');
+  if (navBrandLogo) {
+    navBrandLogo.addEventListener('click', (e) => {
+      e.preventDefault();
+      const heroEl = document.getElementById('hero');
+      if (heroEl) {
+        heroEl.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+
+  const footerLogoLink = document.querySelector('.footer-logo-link');
+  if (footerLogoLink) {
+    footerLogoLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      const heroEl = document.getElementById('hero');
+      if (heroEl) {
+        heroEl.scrollIntoView({ behavior: 'smooth' });
+      }
     });
   }
 
@@ -1012,6 +1116,9 @@
      5. INITIALIZATION
      ========================================================= */
   function init() {
+    const initialTheme = detectInitialTheme();
+    applyTheme(initialTheme, false);
+
     const initialLang = detectInitialLanguage();
     setLanguage(initialLang);
 
